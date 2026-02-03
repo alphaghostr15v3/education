@@ -1,59 +1,48 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="hero-centered bg-white">
-    <!-- Floating Elements -->
-    <div class="float-element d-none d-lg-block" style="top: 15%; left: 5%;">
-        <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=400&auto=format&fit=crop" class="img-screenshot shadow-lg" alt="Vocational Skills">
-    </div>
-    <div class="float-element d-none d-lg-block" style="top: 10%; right: 10%;">
-        <div class="bg-white p-4 rounded-4 shadow-lg text-center" style="width: 180px;">
-            <div class="text-primary fs-1 mb-2">
-                <i class="bi bi-shield-check"></i>
-            </div>
-            <div class="fw-bold">Industry Ready</div>
-        </div>
-    </div>
-    <div class="float-element d-none d-lg-block" style="bottom: 15%; left: 10%;">
-         <img src="https://images.unsplash.com/photo-1544725121-be3b5004730b?q=80&w=400&auto=format&fit=crop" class="img-screenshot shadow-lg" alt="Green Energy Training">
-    </div>
-    <div class="float-element d-none d-lg-block" style="bottom: 10%; right: 8%;">
-         <img src="https://images.unsplash.com/photo-1521791136064-7986c2923216?q=80&w=400&auto=format&fit=crop" class="img-screenshot shadow-lg" alt="Training Excellence">
-    </div>
+<div class="hero-modern">
+    <div class="container-fluid p-0">
+        <div class="row g-0 align-items-stretch">
+            <div class="col-lg-6">
+                <div class="hero-modern-content ps-lg-5 ms-lg-5 pe-lg-4">
+                    <span class="hero-modern-label">Home > International > VET</span>
+                    <h1 class="hero-modern-title">Yadupati Singhania Vocational Education Foundation (YPSVEF)</h1>
+                    <p class="hero-modern-description">
+                        Building future-ready vocational skills that lead to real jobs, sustainable livelihoods, and industry relevance across India.
+                    </p>
+                    
+                    <div class="d-flex flex-wrap gap-3 mt-4">
+                        <a href="{{ route('about') }}" class="btn btn-primary btn-lg px-4 fw-bold">Explore Our Work</a>
+                        <a href="{{ route('about.partners') }}" class="btn btn-outline-light btn-lg px-4 fw-bold">Partner With Us</a>
+                    </div>
 
-    <div class="container position-relative z-index-2">
-        <div class="row justify-content-center">
-            <div class="col-lg-10">
-                <span class="hero-subtitle">Industry-led vocational skills for a green, modern India</span>
-                <h1 class="hero-title mb-4">Yadupati Singhania Vocational Education Foundation (YPSVEF)</h1>
-                <p class="lead mb-5 text-muted mx-auto" style="max-width: 800px;">
-                    A not-for-profit institution building future-ready vocational skills that lead to real jobs, sustainable livelihoods, and industry relevance.
-                </p>
-                
-                <div class="row g-4 mb-5 justify-content-center">
-                    <div class="col-md-4">
-                        <div class="d-flex align-items-center justify-content-center gap-2">
-                            <i class="bi bi-check-circle-fill text-primary"></i>
-                            <span class="fw-bold">Industry-aligned skills</span>
+                    <div class="row g-4 mt-5">
+                        <div class="col-auto">
+                            <div class="d-flex align-items-center gap-2">
+                                <i class="bi bi-check-circle-fill text-white opacity-75"></i>
+                                <span class="small fw-bold">Industry-aligned</span>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="d-flex align-items-center justify-content-center gap-2">
-                            <i class="bi bi-check-circle-fill text-primary"></i>
-                            <span class="fw-bold">Quality training</span>
+                        <div class="col-auto">
+                            <div class="d-flex align-items-center gap-2">
+                                <i class="bi bi-check-circle-fill text-white opacity-75"></i>
+                                <span class="small fw-bold">Future-ready</span>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="d-flex align-items-center justify-content-center gap-2">
-                            <i class="bi bi-check-circle-fill text-primary"></i>
-                            <span class="fw-bold">Employability focus</span>
+                        <div class="col-auto">
+                            <div class="d-flex align-items-center gap-2">
+                                <i class="bi bi-check-circle-fill text-white opacity-75"></i>
+                                <span class="small fw-bold">Employability Focus</span>
+                            </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="d-flex flex-wrap justify-content-center gap-3">
-                    <a href="{{ route('about') }}" class="btn btn-primary btn-lg px-5">Explore Our Work</a>
-                    <a href="{{ route('about.partners') }}" class="btn btn-outline-primary btn-lg px-5">Partner With Us</a>
+            </div>
+            <div class="col-lg-6 d-none d-lg-block">
+                <div class="hero-modern-image-container">
+                    <div class="hero-modern-image-wrapper" style="background-image: url('https://images.unsplash.com/photo-1590650153855-d9e808231d41?q=80&w=1200&auto=format&fit=crop');">
+                    </div>
                 </div>
             </div>
         </div>
