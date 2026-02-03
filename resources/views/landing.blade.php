@@ -22,10 +22,10 @@
     <div class="container position-relative z-index-2">
         <div class="row justify-content-center">
             <div class="col-lg-8">
-                <span class="hero-subtitle">Online Course & Education Template</span>
-                <h1 class="hero-title">EduBlink - Education React Template With Next.js</h1>
+                <span class="hero-subtitle">Empower Your Future with Online Learning</span>
+                <h1 class="hero-title">EduBlink - Your Global Learning Partner</h1>
                 <div class="mt-5">
-                    <a href="{{ route('courses.index') }}" class="btn btn-primary btn-lg px-5 py-3">Download EduBlink Now <i class="bi bi-arrow-right ms-2"></i></a>
+                    <a href="{{ route('courses.index') }}" class="btn btn-primary btn-lg px-5 py-3">Explore Our Courses <i class="bi bi-arrow-right ms-2"></i></a>
                 </div>
             </div>
         </div>

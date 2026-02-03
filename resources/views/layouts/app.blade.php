@@ -108,9 +108,7 @@
                                 </div>
                             </li>
                         @endguest
-                        <li class="nav-item ms-lg-3">
-                            <a class="btn btn-purchase" href="#">Purchase Now</a>
-                        </li>
+
                     </ul>
                 </div>
             </div>
