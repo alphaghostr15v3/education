@@ -8,7 +8,7 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\GalleryController;
 use App\Http\Controllers\Admin\EventController;
-use App\Http\Controllers\Admin\HeroSlideController;
+use App\Http\Controllers\Admin\VideoController;
 
 Route::get('/', [App\Http\Controllers\PageController::class, 'index'])->name('home');
 
@@ -26,6 +26,7 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
     Route::resource('galleries', GalleryController::class);
     Route::resource('events', EventController::class);
     Route::resource('hero-slides', HeroSlideController::class);
+    Route::resource('videos', VideoController::class);
 });
 
 // Student/Public Routes
@@ -43,6 +44,7 @@ Route::get('/our-institutions', [App\Http\Controllers\PageController::class, 'in
 Route::get('/courses-curriculum', [App\Http\Controllers\PageController::class, 'curriculum'])->name('curriculum');
 Route::get('/events', [App\Http\Controllers\PageController::class, 'events'])->name('events');
 Route::get('/gallery', [App\Http\Controllers\PageController::class, 'gallery'])->name('gallery');
+Route::get('/media/videos', [\App\Http\Controllers\VideoController::class, 'index'])->name('videos.index');
 Route::get('/blog', [App\Http\Controllers\PageController::class, 'blog'])->name('blog');
 Route::get('/contact', [App\Http\Controllers\PageController::class, 'contact'])->name('contact');
 

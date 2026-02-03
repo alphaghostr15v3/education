@@ -17,7 +17,7 @@
                     <h4 class="mb-0 fw-bold">Create New Course</h4>
                 </div>
                 <div class="card-body p-4">
-                    <form action="{{ route('admin.courses.store') }}" method="POST">
+                    <form action="{{ route('admin.courses.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="mb-3">
                             <label class="form-label fw-bold">Course Title</label>
@@ -41,6 +41,13 @@
                                 <input type="number" step="0.01" name="price" class="form-control @error('price') is-invalid @enderror" value="{{ old('price', 0) }}" required>
                                 @error('price') <div class="invalid-feedback">{{ $message }}</div> @enderror
                             </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Course Thumbnail</label>
+                            <input type="file" name="thumbnail" class="form-control @error('thumbnail') is-invalid @enderror" accept="image/*">
+                            <div class="form-text text-muted">Recommended size: 800x600px (JPG, PNG)</div>
+                            @error('thumbnail') <div class="invalid-feedback">{{ $message }}</div> @enderror
                         </div>
 
                         <div class="mb-4">

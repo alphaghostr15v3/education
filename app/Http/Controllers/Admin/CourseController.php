@@ -26,11 +26,17 @@ class CourseController extends Controller
             'category_id' => 'required|exists:categories,id',
             'description' => 'nullable',
             'price' => 'required|numeric|min:0',
+            'thumbnail' => 'nullable|image|max:2048', // Max 2MB
         ]);
 
         $validated['slug'] = \Illuminate\Support\Str::slug($validated['title']);
         $validated['instructor_id'] = auth()->id();
         $validated['status'] = 'published';
+
+        if ($request->hasFile('thumbnail')) {
+            $path = $request->file('thumbnail')->store('courses', 'public');
+            $validated['thumbnail'] = $path;
+        }
 
         \App\Models\Course::create($validated);
 
@@ -50,9 +56,15 @@ class CourseController extends Controller
             'category_id' => 'required|exists:categories,id',
             'description' => 'nullable',
             'price' => 'required|numeric|min:0',
+            'thumbnail' => 'nullable|image|max:2048',
         ]);
 
         $validated['slug'] = \Illuminate\Support\Str::slug($validated['title']);
+
+        if ($request->hasFile('thumbnail')) {
+            $path = $request->file('thumbnail')->store('courses', 'public');
+            $validated['thumbnail'] = $path;
+        }
         
         $course->update($validated);
 

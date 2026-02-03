@@ -37,41 +37,44 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav me-auto">
+                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-4">
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('home') }}">HOME</a>
+                            <a class="nav-link text-dark fw-bold" href="{{ route('home') }}">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('about') }}">ABOUT</a>
+                            <a class="nav-link text-dark fw-bold" href="{{ route('about') }}">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('courses.index') }}">COURSES</a>
+                            <a class="nav-link text-dark fw-bold" href="{{ route('courses.index') }}">Courses</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('events') }}">EVENTS</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('gallery') }}">GALLERY</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('blog') }}">BLOG</a>
+                            <a class="nav-link text-dark fw-bold" href="{{ route('events') }}">Events</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPages" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                PAGES
+                            <a class="nav-link text-dark fw-bold dropdown-toggle" href="#" id="mediaDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Media
                             </a>
-                            <ul class="dropdown-menu border-0 shadow-sm" aria-labelledby="navbarDropdownPages">
-                                <li><a class="dropdown-item" href="{{ route('institutes') }}">Institutes & Programs</a></li>
-                                <li><a class="dropdown-item" href="{{ route('institutions') }}">Our Institutions</a></li>
-                                <li><a class="dropdown-item" href="{{ route('curriculum') }}">Courses & Curriculum</a></li>
-                                <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="{{ route('faq') }}">FAQ</a></li>
-                                <li><a class="dropdown-item" href="{{ route('team') }}">Our Team</a></li>
-                                <li><a class="dropdown-item" href="{{ route('pricing') }}">Pricing Plans</a></li>
+                            <ul class="dropdown-menu border-0 shadow-sm" aria-labelledby="mediaDropdown">
+                                <li><a class="dropdown-item" href="{{ route('gallery') }}">Gallery</a></li>
+                                <li><a class="dropdown-item" href="{{ route('videos.index') }}">Video</a></li>
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('contact') }}">CONTACT</a>
+                            <a class="nav-link text-dark fw-bold" href="{{ route('blog') }}">Blog</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link text-dark fw-bold dropdown-toggle" href="#" id="pagesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Pages
+                            </a>
+                            <ul class="dropdown-menu border-0 shadow-sm" aria-labelledby="pagesDropdown">
+                                <li><a class="dropdown-item" href="{{ route('institutes') }}">Institutes</a></li>
+                                <li><a class="dropdown-item" href="{{ route('team') }}">Our Team</a></li>
+                                <li><a class="dropdown-item" href="{{ route('faq') }}">FAQ</a></li>
+                                <li><a class="dropdown-item" href="{{ route('pricing') }}">Pricing</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark fw-bold" href="{{ route('contact') }}">Contact</a>
                         </li>
                     </ul>
 
