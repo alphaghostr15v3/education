@@ -6,7 +6,6 @@
         <div class="row g-0 align-items-stretch">
             <div class="col-lg-6">
                 <div class="hero-modern-content ps-lg-5 ms-lg-5 pe-lg-4">
-                    <span class="hero-modern-label">Home > International > VET</span>
                     <h1 class="hero-modern-title">Yadupati Singhania Vocational Education Foundation (YPSVEF)</h1>
                     <p class="hero-modern-description">
                         Building future-ready vocational skills that lead to real jobs, sustainable livelihoods, and industry relevance across India.
@@ -41,7 +40,10 @@
             </div>
             <div class="col-lg-6 d-none d-lg-block">
                 <div class="hero-modern-image-container">
-                    <div class="hero-modern-image-wrapper" style="background-image: url('https://images.unsplash.com/photo-1590650153855-d9e808231d41?q=80&w=1200&auto=format&fit=crop');">
+                    <div class="hero-slider">
+                        @foreach($slides as $index => $slide)
+                            <div class="hero-slide" style="background-image: url('{{ $slide->image_path }}'); animation-delay: {{ $index * 5 }}s;"></div>
+                        @endforeach
                     </div>
                 </div>
             </div>

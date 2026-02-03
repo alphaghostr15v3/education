@@ -129,6 +129,8 @@ body {
 
 .hero-modern-content {
     padding: 120px 0;
+    position: relative;
+    z-index: 5;
 }
 
 .hero-modern-label {
@@ -141,13 +143,13 @@ body {
 }
 
 .hero-modern-title {
-    font-size: clamp(2.5rem, 6vw, 4.8rem);
-    /* Responsive fluid typography */
+    font-size: clamp(2rem, 8vw, 4.2rem);
+    /* More aggressive fluid range */
     font-weight: 800;
     line-height: 1.05;
     margin-bottom: 2rem;
     word-wrap: break-word;
-    /* Ensure single long words don't overflow */
+    letter-spacing: -1px;
 }
 
 .hero-modern-description {
@@ -162,19 +164,52 @@ body {
     position: relative;
     height: 100%;
     min-height: 650px;
+    z-index: 1;
 }
 
-.hero-modern-image-wrapper {
+.hero-slider {
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     left: -150px;
-    /* Offset for curve overlap */
+    clip-path: ellipse(100% 100% at 100% 50%);
+    overflow: hidden;
+}
+
+.hero-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background-size: cover;
     background-position: center;
-    clip-path: ellipse(100% 100% at 100% 50%);
-    z-index: 1;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+    animation: heroSliderAnimation 15s infinite;
+}
+
+@keyframes heroSliderAnimation {
+    0% {
+        opacity: 0;
+    }
+
+    5% {
+        opacity: 1;
+    }
+
+    33% {
+        opacity: 1;
+    }
+
+    38% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
 }
 
 .hero-modern .btn-primary {
@@ -193,18 +228,60 @@ body {
     background-color: rgba(255, 255, 255, 0.1);
 }
 
-@media (max-width: 991.98px) {
+@media (max-width: 1199.98px) {
     .hero-modern-title {
-        font-size: 2.5rem;
+        font-size: 3.2rem;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .hero-modern {
+        min-height: auto;
+    }
+
+    .hero-modern-content {
+        padding: 60px 30px;
+        text-align: center;
+    }
+
+    .hero-modern-title {
+        font-size: 2.4rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-modern-description {
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 1.2rem;
     }
 
     .hero-modern-image-container {
-        min-height: 300px;
+        min-height: 380px;
+        width: 100%;
     }
 
-    .hero-modern-image-wrapper {
+    .hero-slider {
         left: 0;
         clip-path: none;
         position: relative;
+    }
+
+    .hero-modern .d-flex.flex-wrap {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .hero-modern-title {
+        font-size: 1.8rem;
+    }
+
+    .hero-modern-content {
+        padding: 40px 20px;
+    }
+
+    .hero-modern-description {
+        font-size: 1.1rem;
     }
 }

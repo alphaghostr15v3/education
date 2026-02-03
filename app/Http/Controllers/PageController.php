@@ -4,10 +4,17 @@ namespace App\Http\Controllers;
 
 use App\Models\Gallery;
 use App\Models\Event;
+use App\Models\HeroSlide;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
+    public function index()
+    {
+        $slides = HeroSlide::orderBy('order')->get();
+        return view('landing', compact('slides'));
+    }
+
     public function gallery()
     {
         $galleries = Gallery::with('images')->latest()->get();

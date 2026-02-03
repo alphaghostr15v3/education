@@ -85,5 +85,30 @@ class DatabaseSeeder extends Seeder
             'gallery_id' => $gallery->id,
             'image_path' => 'gallery/campus.png',
         ]);
+
+        // Create Sample Hero Slides
+        \App\Models\HeroSlide::create([
+            'title' => 'Yadupati Singhania Vocational Education Foundation (YPSVEF)',
+            'description' => 'Building future-ready vocational skills that lead to real jobs, sustainable livelihoods, and industry relevance across India.',
+            'image_path' => 'https://images.unsplash.com/photo-1581092921461-7d6570975544?q=80&w=1200&auto=format&fit=crop',
+            'label' => 'Home > International > VET',
+            'order' => 1,
+        ]);
+
+        \App\Models\HeroSlide::create([
+            'title' => 'Industry-Led Capability Building',
+            'description' => 'Bridging the gap between trained youth and industry-ready skills with modern, tech-enabled centers.',
+            'image_path' => 'https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?q=80&w=1200&auto=format&fit=crop',
+            'label' => 'Our Mission > Impact',
+            'order' => 2,
+        ]);
+
+        \App\Models\HeroSlide::create([
+            'title' => 'Excellence as a System',
+            'description' => 'Standardized labs, SOP-driven training, and trainer upskilling for global competition-ready talent.',
+            'image_path' => 'https://images.unsplash.com/photo-1541888946425-d81bb19480c5?q=80&w=1200&auto=format&fit=crop',
+            'label' => 'Quality > Standards',
+            'order' => 3,
+        ]);
     }
 }

@@ -13,7 +13,7 @@
                 </div>
                 <div>
                     <h5 class="fw-bold">Our Office</h5>
-                    <p class="text-muted mb-0">123 Education Lane<br>Learning District, ED 54321</p>
+                    <p class="text-muted mb-0">PHOENIX Tower, JK Centre,<br>59 Community Centre, Okhla Phase III,<br>New Delhi – 110020</p>
                 </div>
             </div>
 
@@ -23,7 +23,7 @@
                 </div>
                 <div>
                     <h5 class="fw-bold">Email Us</h5>
-                    <p class="text-muted mb-0">support@education.com<br>info@education.com</p>
+                    <p class="text-muted mb-0">ypsvef@jkcement.com</p>
                 </div>
             </div>
 
@@ -33,7 +33,7 @@
                 </div>
                 <div>
                     <h5 class="fw-bold">Call Us</h5>
-                    <p class="text-muted mb-0">+1 (234) 567-890</p>
+                    <p class="text-muted mb-0">+91 11 49220000</p>
                 </div>
             </div>
         </div>

@@ -8,10 +8,9 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\GalleryController;
 use App\Http\Controllers\Admin\EventController;
+use App\Http\Controllers\Admin\HeroSlideController;
 
-Route::get('/', function () {
-    return view('landing');
-})->name('home');
+Route::get('/', [App\Http\Controllers\PageController::class, 'index'])->name('home');
 
 Auth::routes();
 
@@ -26,6 +25,7 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
     Route::resource('users', UserController::class)->only(['index', 'destroy']);
     Route::resource('galleries', GalleryController::class);
     Route::resource('events', EventController::class);
+    Route::resource('hero-slides', HeroSlideController::class);
 });
 
 // Student/Public Routes

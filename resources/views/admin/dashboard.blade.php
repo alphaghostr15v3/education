@@ -114,6 +114,15 @@
                                 <i class="bi bi-chevron-right"></i>
                             </div>
                         </a>
+                        <a href="{{ route('admin.hero-slides.index') }}" class="list-group-item list-group-item-action border-0 px-0 text-primary">
+                            <div class="d-flex w-100 justify-content-between align-items-center">
+                                <div>
+                                    <h6 class="mb-1 fw-bold">Manage Hero Photos</h6>
+                                    <p class="mb-1 text-muted small">Update background slider images for the home page.</p>
+                                </div>
+                                <i class="bi bi-chevron-right"></i>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>
