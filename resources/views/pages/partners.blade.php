@@ -23,22 +23,22 @@
     <div class="row g-4 justify-content-center">
         <div class="col-6 col-md-3">
             <div class="card h-100 border-0 shadow-sm text-center p-4 py-5 hover-lift">
-                <img src="https://via.placeholder.com/120x60?text=TechCorp" class="img-fluid mx-auto mb-0" alt="Partner 1">
+                <img src="https://logo.clearbit.com/google.com" class="img-fluid mx-auto mb-0" alt="Google" style="max-height: 40px; filter: grayscale(100%);">
             </div>
         </div>
         <div class="col-6 col-md-3">
             <div class="card h-100 border-0 shadow-sm text-center p-4 py-5 hover-lift">
-                <img src="https://via.placeholder.com/120x60?text=GlobalEdu" class="img-fluid mx-auto mb-0" alt="Partner 2">
+                <img src="https://logo.clearbit.com/microsoft.com" class="img-fluid mx-auto mb-0" alt="Microsoft" style="max-height: 40px; filter: grayscale(100%);">
             </div>
         </div>
         <div class="col-6 col-md-3">
             <div class="card h-100 border-0 shadow-sm text-center p-4 py-5 hover-lift">
-                <img src="https://via.placeholder.com/120x60?text=CloudNet" class="img-fluid mx-auto mb-0" alt="Partner 3">
+                <img src="https://logo.clearbit.com/amazon.com" class="img-fluid mx-auto mb-0" alt="Amazon" style="max-height: 40px; filter: grayscale(100%);">
             </div>
         </div>
         <div class="col-6 col-md-3">
             <div class="card h-100 border-0 shadow-sm text-center p-4 py-5 hover-lift">
-                <img src="https://via.placeholder.com/120x60?text=SoftBuild" class="img-fluid mx-auto mb-0" alt="Partner 4">
+                <img src="https://logo.clearbit.com/adobe.com" class="img-fluid mx-auto mb-0" alt="Adobe" style="max-height: 40px; filter: grayscale(100%);">
             </div>
         </div>
     </div>

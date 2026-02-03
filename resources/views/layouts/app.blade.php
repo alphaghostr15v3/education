@@ -23,10 +23,13 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
             <div class="container">
                 <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
-                    <div class="bg-primary rounded-circle d-flex align-items-center justify-content-center me-2" style="width: 40px; height: 40px;">
-                        <span class="text-white fw-bold">e</span>
+                    <div class="bg-primary rounded-circle d-flex align-items-center justify-content-center me-2" style="width: 45px; height: 45px;">
+                        <span class="text-white fw-bold" style="font-size: 1.2rem;">Y</span>
                     </div>
-                    <span class="fw-bold fs-3 text-dark">EduBlink</span>
+                    <div>
+                        <span class="fw-bold fs-4 text-dark d-block leading-none">YPSVEF</span>
+                        <small class="text-muted d-none d-lg-block" style="font-size: 0.7rem; margin-top: -5px;">Vocational Education Foundation</small>
+                    </div>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -121,6 +124,67 @@
         <main class="py-4">
             @yield('content')
         </main>
+
+        <footer class="bg-dark text-white py-5 mt-5">
+            <div class="container">
+                <div class="row g-4">
+                    <div class="col-lg-4">
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="bg-primary rounded-circle d-flex align-items-center justify-content-center me-2" style="width: 40px; height: 40px;">
+                                <span class="text-white fw-bold">Y</span>
+                            </div>
+                            <span class="fw-bold fs-4">YPSVEF</span>
+                        </div>
+                        <p class="text-muted small">Building future-ready vocational skills for a green, modern India. A not-for-profit initiative dedicated to industry-aligned excellence.</p>
+                        <div class="d-flex gap-3 mt-4">
+                            <a href="#" class="text-white opacity-75"><i class="bi bi-facebook"></i></a>
+                            <a href="#" class="text-white opacity-75"><i class="bi bi-twitter-x"></i></a>
+                            <a href="#" class="text-white opacity-75"><i class="bi bi-linkedin"></i></a>
+                            <a href="#" class="text-white opacity-75"><i class="bi bi-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 offset-lg-1">
+                        <h6 class="fw-bold mb-4">Quick Links</h6>
+                        <ul class="list-unstyled small">
+                            <li class="mb-2"><a href="{{ route('about') }}" class="text-muted text-decoration-none hover-white">About Us</a></li>
+                            <li class="mb-2"><a href="{{ route('courses.index') }}" class="text-muted text-decoration-none hover-white">Vocational Courses</a></li>
+                            <li class="mb-2"><a href="{{ route('institutes') }}" class="text-muted text-decoration-none hover-white">Institutes</a></li>
+                            <li><a href="{{ route('contact') }}" class="text-muted text-decoration-none hover-white">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2">
+                        <h6 class="fw-bold mb-4">Resources</h6>
+                        <ul class="list-unstyled small">
+                            <li class="mb-2"><a href="{{ route('gallery') }}" class="text-muted text-decoration-none hover-white">Gallery</a></li>
+                            <li class="mb-2"><a href="{{ route('blog') }}" class="text-muted text-decoration-none hover-white">News & Blog</a></li>
+                            <li class="mb-2"><a href="{{ route('faq') }}" class="text-muted text-decoration-none hover-white">FAQ</a></li>
+                            <li><a href="{{ route('about.partners') }}" class="text-muted text-decoration-none hover-white">Partnerships</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3">
+                        <h6 class="fw-bold mb-4">Contact Info</h6>
+                        <p class="text-muted small mb-2"><i class="bi bi-geo-alt me-2"></i> J.K. House, 7, Council House Street, Kolkata - 700001</p>
+                        <p class="text-muted small mb-2"><i class="bi bi-envelope me-2"></i> info@ypsvef.org</p>
+                        <p class="text-muted small"><i class="bi bi-telephone me-2"></i> +91 33 2248 8908</p>
+                    </div>
+                </div>
+                <hr class="my-5 opacity-25">
+                <div class="row align-items-center">
+                    <div class="col-md-6 text-center text-md-start">
+                        <p class="small text-muted mb-0">&copy; {{ date('Y') }} Yadupati Singhania Vocational Education Foundation. All rights reserved.</p>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end mt-3 mt-md-0">
+                        <a href="#" class="text-muted small text-decoration-none me-3">Privacy Policy</a>
+                        <a href="#" class="text-muted small text-decoration-none">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
     </div>
+    
+    <style>
+        .hover-white:hover { color: #fff !important; }
+        footer .text-muted { color: #b0b0b0 !important; }
+    </style>
 </body>
 </html>

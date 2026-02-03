@@ -3,20 +3,20 @@
 @section('content')
 <div class="bg-light py-5 mb-5 border-bottom">
     <div class="container py-4 text-center">
-        <h1 class="display-3 fw-bold text-dark">About Our Mission</h1>
-        <p class="lead text-muted mx-auto" style="max-width: 700px;">We are dedicated to bridging the gap between talent and opportunity through world-class online education.</p>
+        <h1 class="display-3 fw-bold text-dark">About YPSVEF</h1>
+        <p class="lead text-muted mx-auto" style="max-width: 700px;">Industry-led vocational skills for a green, modern India. We build future-ready capabilities that lead to real employment.</p>
     </div>
 </div>
 
 <div class="container mb-5">
     <div class="row align-items-center py-5">
         <div class="col-lg-6 mb-5 mb-lg-0">
-            <img src="https://via.placeholder.com/600x400?text=Our+Story" alt="Our Story" class="img-fluid rounded-4 shadow">
+            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1000&auto=format&fit=crop" alt="Our Story" class="img-fluid rounded-4 shadow-lg">
         </div>
         <div class="col-lg-6 ps-lg-5">
-            <h2 class="fw-bold mb-4">Our Journey</h2>
-            <p class="text-muted mb-4 fs-5">Founded in 2024, our platform was built on the belief that quality education should be accessible to everyone, regardless of their location or background.</p>
-            <p class="text-muted mb-5 fs-5">Today, we serve thousands of students worldwide, providing them with the tools and knowledge they need to succeed in the digital age.</p>
+            <h2 class="fw-bold mb-4">Our Mission</h2>
+            <p class="text-muted mb-4 fs-5">Yadupati Singhania Vocational Education Foundation (YPSVEF) is a not-for-profit institution building future-ready vocational skills that lead to real jobs, sustainable livelihoods, and industry relevance.</p>
+            <p class="text-muted mb-5 fs-5">We work at the intersection of industry needs, youth aspirations, and national priorities—delivering high-quality, low-waste, employability-focused vocational education.</p>
             <div class="row g-4 text-center">
                 <div class="col-sm-4">
                     <h3 class="fw-bold text-primary mb-0">2024</h3>

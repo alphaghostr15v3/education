@@ -12,7 +12,7 @@
             <div class="col-md-6 col-lg-4">
                 <div class="card border-0 shadow-sm h-100 overflow-hidden hover-lift">
                     @if($event->image_path)
-                        <img src="{{ $event->image_path }}" class="card-img-top" alt="{{ $event->title }}" style="height: 200px; object-fit: cover;">
+                        <img src="{{ asset('storage/' . $event->image_path) }}" class="card-img-top" alt="{{ $event->title }}" style="height: 200px; object-fit: cover;">
                     @else
                         <div class="bg-primary bg-opacity-10 d-flex flex-column align-items-center justify-content-center" style="height: 200px;">
                             <div class="display-4 fw-bold text-primary">{{ \Carbon\Carbon::parse($event->event_date)->format('d') }}</div>

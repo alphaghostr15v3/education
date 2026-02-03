@@ -11,10 +11,10 @@
 <div class="container mb-5">
     <div class="row g-4">
         <div class="col-md-6">
-            <div class="card h-100 border-0 shadow-sm overflow-hidden">
+            <div class="card h-100 border-0 shadow-sm overflow-hidden hover-lift transition">
                 <div class="row g-0">
-                    <div class="col-sm-4 bg-primary d-flex align-items-center justify-content-center">
-                        <i class="bi bi-code-square text-white display-4"></i>
+                    <div class="col-sm-4">
+                        <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=600&auto=format&fit=crop" class="h-100 w-100" alt="Technology" style="object-fit: cover; min-height: 200px;">
                     </div>
                     <div class="col-sm-8">
                         <div class="card-body p-4">
@@ -33,10 +33,10 @@
         </div>
 
         <div class="col-md-6">
-            <div class="card h-100 border-0 shadow-sm overflow-hidden">
+            <div class="card h-100 border-0 shadow-sm overflow-hidden hover-lift transition">
                 <div class="row g-0">
-                    <div class="col-sm-4 bg-secondary d-flex align-items-center justify-content-center">
-                        <i class="bi bi-bar-chart-line text-white display-4"></i>
+                    <div class="col-sm-4">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=600&auto=format&fit=crop" class="h-100 w-100" alt="Business" style="object-fit: cover; min-height: 200px;">
                     </div>
                     <div class="col-sm-8">
                         <div class="card-body p-4">
