@@ -1,0 +1,101 @@
+:root {
+    --edu-primary: #1ab69d;
+    --edu-secondary: #ee4a62;
+    --edu-bg-soft: #f0f4f5;
+    --edu-text-dark: #181818;
+    --edu-text-muted: #525252;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    color: var(--edu-text-dark);
+    background-color: #fff;
+}
+
+.text-primary { color: var(--edu-primary) !important; }
+.bg-primary { background-color: var(--edu-primary) !important; }
+.btn-primary { 
+    background-color: var(--edu-primary); 
+    border-color: var(--edu-primary);
+    padding: 12px 30px;
+    border-radius: 5px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+.btn-primary:hover {
+    background-color: #16a08a;
+    border-color: #16a08a;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(26, 182, 157, 0.2);
+}
+
+.navbar {
+    padding: 20px 0;
+    transition: all 0.3s ease;
+}
+
+.navbar .nav-link {
+    font-weight: 700;
+    color: var(--edu-text-dark) !important;
+    text-transform: uppercase;
+    font-size: 14px;
+    margin: 0 15px;
+}
+
+.navbar .nav-link:hover {
+    color: var(--edu-primary) !important;
+}
+
+.btn-purchase {
+    background-color: #31b9a9;
+    color: #fff !important;
+    border-radius: 5px;
+    font-weight: 700;
+    padding: 12px 25px;
+    text-transform: none;
+}
+
+/* Hero Section Styles */
+.hero-centered {
+    text-align: center;
+    padding: 120px 0;
+    background: radial-gradient(circle at 50% 50%, rgba(26, 182, 157, 0.05) 0%, rgba(255, 255, 255, 1) 70%);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-subtitle {
+    color: var(--edu-primary);
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.hero-title {
+    font-size: 64px;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 40px;
+}
+
+/* Floating Elements */
+.float-element {
+    position: absolute;
+    z-index: 10;
+    animation: floating 3s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes floating {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
+}
+
+.img-screenshot {
+    border-radius: 10px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+    max-width: 300px;
+}
