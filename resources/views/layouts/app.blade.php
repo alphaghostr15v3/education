@@ -37,21 +37,38 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-4">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-3">
                         <li class="nav-item">
-                            <a class="nav-link text-dark fw-bold" href="{{ route('home') }}">Home</a>
+                            <a class="nav-link fw-bold {{ request()->routeIs('home') ? 'active text-primary' : 'text-dark' }}" href="{{ route('home') }}">Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark fw-bold" href="{{ route('about') }}">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark fw-bold" href="{{ route('courses.index') }}">Courses</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark fw-bold" href="{{ route('events') }}">Events</a>
-                        </li>
+                        
                         <li class="nav-item dropdown">
-                            <a class="nav-link text-dark fw-bold dropdown-toggle" href="#" id="mediaDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link fw-bold dropdown-toggle {{ request()->routeIs('about*') ? 'active text-primary' : 'text-dark' }}" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                About Us
+                            </a>
+                            <ul class="dropdown-menu border-0 shadow-sm" aria-labelledby="aboutDropdown">
+                                <li><a class="dropdown-item" href="{{ route('about') }}">Overview</a></li>
+                                <li><a class="dropdown-item" href="{{ route('about.mission') }}">Mission & Vision</a></li>
+                                <li><a class="dropdown-item" href="{{ route('about.story') }}">Our Story</a></li>
+                                <li><a class="dropdown-item" href="{{ route('about.leadership') }}">Leadership</a></li>
+                                <li><a class="dropdown-item" href="{{ route('about.partners') }}">Partnerships</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link fw-bold {{ request()->routeIs('institutes') ? 'active text-primary' : 'text-dark' }}" href="{{ route('institutes') }}">Institutes</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link fw-bold {{ request()->routeIs('courses.*') ? 'active text-primary' : 'text-dark' }}" href="{{ route('courses.index') }}">Courses</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link fw-bold {{ request()->routeIs('events') ? 'active text-primary' : 'text-dark' }}" href="{{ route('events') }}">Events</a>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link fw-bold dropdown-toggle {{ request()->routeIs('gallery') || request()->routeIs('videos.*') ? 'active text-primary' : 'text-dark' }}" href="#" id="mediaDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Media
                             </a>
                             <ul class="dropdown-menu border-0 shadow-sm" aria-labelledby="mediaDropdown">
@@ -59,27 +76,26 @@
                                 <li><a class="dropdown-item" href="{{ route('videos.index') }}">Video</a></li>
                             </ul>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark fw-bold" href="{{ route('blog') }}">Blog</a>
-                        </li>
+
                         <li class="nav-item dropdown">
-                            <a class="nav-link text-dark fw-bold dropdown-toggle" href="#" id="pagesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Pages
+                            <a class="nav-link fw-bold dropdown-toggle {{ request()->routeIs('blog') || request()->routeIs('faq') || request()->routeIs('pricing') || request()->routeIs('team') ? 'active text-primary' : 'text-dark' }}" href="#" id="resourcesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Resources
                             </a>
-                            <ul class="dropdown-menu border-0 shadow-sm" aria-labelledby="pagesDropdown">
-                                <li><a class="dropdown-item" href="{{ route('institutes') }}">Institutes</a></li>
+                            <ul class="dropdown-menu border-0 shadow-sm" aria-labelledby="resourcesDropdown">
+                                <li><a class="dropdown-item" href="{{ route('blog') }}">News & Blog</a></li>
                                 <li><a class="dropdown-item" href="{{ route('team') }}">Our Team</a></li>
                                 <li><a class="dropdown-item" href="{{ route('faq') }}">FAQ</a></li>
                                 <li><a class="dropdown-item" href="{{ route('pricing') }}">Pricing</a></li>
                             </ul>
                         </li>
+
                         <li class="nav-item">
-                            <a class="nav-link text-dark fw-bold" href="{{ route('contact') }}">Contact</a>
+                            <a class="nav-link fw-bold {{ request()->routeIs('contact') ? 'active text-primary' : 'text-dark' }}" href="{{ route('contact') }}">Contact</a>
                         </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ms-auto">
+                    <ul class="navbar-nav ms-3">
                         <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))
