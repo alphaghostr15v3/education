@@ -35,6 +35,51 @@
     </div>
 </div>
 
+<div class="container mb-5">
+    <div class="row g-4 pb-5">
+        <div class="col-md-6 col-lg-3">
+            <div class="card h-100 border-0 shadow-sm text-center p-4 hover-lift">
+                <div class="mb-3 text-primary">
+                    <i class="bi bi-bullseye fs-1"></i>
+                </div>
+                <h5 class="fw-bold">Mission & Vision</h5>
+                <p class="small text-muted mb-4">Our core purpose and aspirations for the future of education.</p>
+                <a href="{{ route('about.mission') }}" class="btn btn-outline-primary btn-sm mt-auto">Learn More</a>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+            <div class="card h-100 border-0 shadow-sm text-center p-4 hover-lift">
+                <div class="mb-3 text-primary">
+                    <i class="bi bi-book fs-1"></i>
+                </div>
+                <h5 class="fw-bold">Our Story</h5>
+                <p class="small text-muted mb-4">The journey of how we became a leading learning platform.</p>
+                <a href="{{ route('about.story') }}" class="btn btn-outline-primary btn-sm mt-auto">Learn More</a>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+            <div class="card h-100 border-0 shadow-sm text-center p-4 hover-lift">
+                <div class="mb-3 text-primary">
+                    <i class="bi bi-person-workspace fs-1"></i>
+                </div>
+                <h5 class="fw-bold">Leadership & Team</h5>
+                <p class="small text-muted mb-4">Meet the visionaries and experts behind the scenes.</p>
+                <a href="{{ route('about.leadership') }}" class="btn btn-outline-primary btn-sm mt-auto">Learn More</a>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+            <div class="card h-100 border-0 shadow-sm text-center p-4 hover-lift">
+                <div class="mb-3 text-primary">
+                    <i class="bi bi-hand-thumbs-up fs-1"></i>
+                </div>
+                <h5 class="fw-bold">Our Partners</h5>
+                <p class="small text-muted mb-4">Collaborating with world-class organizations to provide value.</p>
+                <a href="{{ route('about.partners') }}" class="btn btn-outline-primary btn-sm mt-auto">Learn More</a>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="bg-primary text-white py-5">
     <div class="container text-center py-5">
         <h2 class="fw-bold mb-4">Core Values</h2>

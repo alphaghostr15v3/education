@@ -23,6 +23,10 @@ class PageController extends Controller
     }
 
     public function about() { return view('pages.about'); }
+    public function mission() { return view('pages.mission'); }
+    public function story() { return view('pages.story'); }
+    public function leadership() { return view('pages.leadership'); }
+    public function partners() { return view('pages.partners'); }
     public function blog() { return view('pages.blog'); }
     public function contact() { return view('pages.contact'); }
     public function faq() { return view('pages.faq'); }

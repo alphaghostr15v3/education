@@ -34,6 +34,10 @@ Route::get('/courses/{slug}', [\App\Http\Controllers\CourseController::class, 's
 
 // Public Pages
 Route::get('/about', [App\Http\Controllers\PageController::class, 'about'])->name('about');
+Route::get('/about/mission-vision', [App\Http\Controllers\PageController::class, 'mission'])->name('about.mission');
+Route::get('/about/our-story', [App\Http\Controllers\PageController::class, 'story'])->name('about.story');
+Route::get('/about/leadership-team', [App\Http\Controllers\PageController::class, 'leadership'])->name('about.leadership');
+Route::get('/about/partners', [App\Http\Controllers\PageController::class, 'partners'])->name('about.partners');
 Route::get('/events', [App\Http\Controllers\PageController::class, 'events'])->name('events');
 Route::get('/gallery', [App\Http\Controllers\PageController::class, 'gallery'])->name('gallery');
 Route::get('/blog', [App\Http\Controllers\PageController::class, 'blog'])->name('blog');
