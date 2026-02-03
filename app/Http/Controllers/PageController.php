@@ -27,6 +27,9 @@ class PageController extends Controller
     public function story() { return view('pages.story'); }
     public function leadership() { return view('pages.leadership'); }
     public function partners() { return view('pages.partners'); }
+    public function institutes() { return view('pages.institutes'); }
+    public function institutions() { return view('pages.institutions'); }
+    public function curriculum() { return view('pages.curriculum'); }
     public function blog() { return view('pages.blog'); }
     public function contact() { return view('pages.contact'); }
     public function faq() { return view('pages.faq'); }

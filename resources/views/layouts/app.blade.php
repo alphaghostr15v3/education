@@ -58,6 +58,10 @@
                                 PAGES
                             </a>
                             <ul class="dropdown-menu border-0 shadow-sm" aria-labelledby="navbarDropdownPages">
+                                <li><a class="dropdown-item" href="{{ route('institutes') }}">Institutes & Programs</a></li>
+                                <li><a class="dropdown-item" href="{{ route('institutions') }}">Our Institutions</a></li>
+                                <li><a class="dropdown-item" href="{{ route('curriculum') }}">Courses & Curriculum</a></li>
+                                <li><hr class="dropdown-divider"></li>
                                 <li><a class="dropdown-item" href="{{ route('faq') }}">FAQ</a></li>
                                 <li><a class="dropdown-item" href="{{ route('team') }}">Our Team</a></li>
                                 <li><a class="dropdown-item" href="{{ route('pricing') }}">Pricing Plans</a></li>

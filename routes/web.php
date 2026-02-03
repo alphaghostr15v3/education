@@ -38,6 +38,9 @@ Route::get('/about/mission-vision', [App\Http\Controllers\PageController::class,
 Route::get('/about/our-story', [App\Http\Controllers\PageController::class, 'story'])->name('about.story');
 Route::get('/about/leadership-team', [App\Http\Controllers\PageController::class, 'leadership'])->name('about.leadership');
 Route::get('/about/partners', [App\Http\Controllers\PageController::class, 'partners'])->name('about.partners');
+Route::get('/institutes-programs', [App\Http\Controllers\PageController::class, 'institutes'])->name('institutes');
+Route::get('/our-institutions', [App\Http\Controllers\PageController::class, 'institutions'])->name('institutions');
+Route::get('/courses-curriculum', [App\Http\Controllers\PageController::class, 'curriculum'])->name('curriculum');
 Route::get('/events', [App\Http\Controllers\PageController::class, 'events'])->name('events');
 Route::get('/gallery', [App\Http\Controllers\PageController::class, 'gallery'])->name('gallery');
 Route::get('/blog', [App\Http\Controllers\PageController::class, 'blog'])->name('blog');
