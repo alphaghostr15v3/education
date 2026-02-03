@@ -9,6 +9,8 @@ use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\GalleryController;
 use App\Http\Controllers\Admin\EventController;
 use App\Http\Controllers\Admin\VideoController;
+use App\Http\Controllers\Admin\InstituteController;
+use App\Http\Controllers\Admin\HeroSlideController;
 
 Route::get('/', [App\Http\Controllers\PageController::class, 'index'])->name('home');
 
@@ -27,6 +29,7 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
     Route::resource('events', EventController::class);
     Route::resource('hero-slides', HeroSlideController::class);
     Route::resource('videos', VideoController::class);
+    Route::resource('institutes', InstituteController::class);
 });
 
 // Student/Public Routes

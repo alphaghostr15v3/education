@@ -16,7 +16,7 @@
                             {{ $gallery->images->count() }} <i class="bi bi-images ms-1"></i>
                         </span>
                     @endif
-                    <img src="{{ asset('storage/' . $gallery->image_path) }}" class="card-img-top" alt="{{ $gallery->title }}" style="height: 200px; object-fit: cover;">
+                    <img src="{{ asset($gallery->image_path) }}" class="card-img-top" alt="{{ $gallery->title }}" style="height: 200px; object-fit: cover;">
                     <div class="card-body p-3 text-center">
                         <h6 class="fw-bold mb-1">{{ $gallery->title }}</h6>
                         <small class="text-primary">{{ $gallery->category }}</small>

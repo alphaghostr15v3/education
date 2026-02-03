@@ -10,39 +10,36 @@
 
 <div class="container mb-5">
     <div class="row g-4">
-        <!-- Technology Institute -->
+        @forelse($institutes as $institute)
         <div class="col-md-6">
             <div class="card h-100 border-0 shadow-sm overflow-hidden hover-lift transition">
-                <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=800&auto=format&fit=crop" class="card-img-top" alt="Technology" style="height: 300px; object-fit: cover;">
+                 <img src="{{ asset('storage/' . $institute->thumbnail) }}" class="card-img-top" alt="{{ $institute->title }}" style="height: 300px; object-fit: cover;">
                 <div class="card-body p-4">
-                    <h3 class="fw-bold mb-3">Technology Institute</h3>
-                    <p class="text-muted mb-4">Focusing on software engineering, data science, and cybersecurity certifications. Prepare for the digital future with hands-on labs and expert-led instruction.</p>
+                    <h3 class="fw-bold mb-3">{{ $institute->title }}</h3>
+                    <p class="text-muted mb-4">{{ $institute->description }}</p>
+                    
+                    @php $features = $institute->features_list; @endphp
+                    @if(count($features) > 0)
                     <ul class="list-unstyled mb-4">
-                        <li class="mb-2 d-flex align-items-center"><i class="bi bi-check-circle-fill text-primary me-2"></i>Full-Stack Development</li>
-                        <li class="mb-2 d-flex align-items-center"><i class="bi bi-check-circle-fill text-primary me-2"></i>AI & Machine Learning</li>
-                        <li class="d-flex align-items-center"><i class="bi bi-check-circle-fill text-primary me-2"></i>Cloud Architecture</li>
+                        @foreach($features as $feature)
+                        <li class="mb-2 d-flex align-items-center">
+                            <i class="bi bi-check-circle-fill text-primary me-2"></i> {{ $feature }}
+                        </li>
+                        @endforeach
                     </ul>
-                    <a href="{{ route('courses.index') }}" class="btn btn-primary px-4">View Tech Programs</a>
+                    @endif
+                    
+                    @if($institute->action_url)
+                    <a href="{{ $institute->action_url }}" class="btn btn-outline-primary px-4">View Programs</a>
+                    @endif
                 </div>
             </div>
         </div>
-
-        <!-- Business Institute -->
-        <div class="col-md-6">
-            <div class="card h-100 border-0 shadow-sm overflow-hidden hover-lift transition">
-                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop" class="card-img-top" alt="Business" style="height: 300px; object-fit: cover;">
-                <div class="card-body p-4">
-                    <h3 class="fw-bold mb-3">Business Institute</h3>
-                    <p class="text-muted mb-4">Empowering future leaders with management, finance, and entrepreneurship skills. Build the strategic mindset required for today's competitive markets.</p>
-                    <ul class="list-unstyled mb-4">
-                        <li class="mb-2 d-flex align-items-center"><i class="bi bi-check-circle-fill text-secondary me-2"></i>Strategic Management</li>
-                        <li class="mb-2 d-flex align-items-center"><i class="bi bi-check-circle-fill text-secondary me-2"></i>Digital Marketing</li>
-                        <li class="d-flex align-items-center"><i class="bi bi-check-circle-fill text-secondary me-2"></i>Financial Analysis</li>
-                    </ul>
-                    <a href="{{ route('courses.index') }}" class="btn btn-outline-secondary px-4">View Business Programs</a>
-                </div>
-            </div>
+        @empty
+        <div class="col-12 text-center py-5">
+             <p class="text-muted">No institutes available at the moment.</p>
         </div>
+        @endforelse
     </div>
 </div>
 @endsection
