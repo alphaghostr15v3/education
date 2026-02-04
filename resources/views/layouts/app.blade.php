@@ -138,7 +138,7 @@
                 <div class="row g-4">
                     <div class="col-lg-4">
                         <div class="mb-4">
-                            <img src="{{ asset('images/ysvef-logo.png') }}" alt="YSVEF Logo" style="height: 50px; width: auto;">
+                            <img src="{{ asset('images/YPSVEFFOOTER.png') }}" alt="YSVEF Logo" style="height: 80px; width: auto;">
                         </div>
                         <p class="text-muted small">Building future-ready vocational skills for a green, modern India. A not-for-profit initiative dedicated to industry-aligned excellence.</p>
                         <div class="d-flex gap-3 mt-4">
