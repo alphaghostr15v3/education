@@ -56,39 +56,39 @@
     <div class="container py-5">
         <div class="row align-items-center">
             <div class="col-lg-6 mb-4 mb-lg-0">
-                <span class="text-primary text-uppercase fw-bold letter-spacing-1 mb-2 d-block">OUR POSITIONING</span>
-                <h2 class="display-5 fw-bold mb-4">Not just skilling. <br>Industry-led capability building.</h2>
-                <p class="lead text-muted mb-4">India does not suffer from a shortage of trained youth. It suffers from a shortage of industry-ready skills.</p>
-                <p class="text-muted fs-5">YPSVEF was created to bridge this gap by designing and delivering training that is defined by real job roles and modern systems.</p>
+                <span class="text-primary text-uppercase fw-bold letter-spacing-1 mb-2 d-block" style="font-size: 1.2rem;">OUR POSITIONING</span>
+                <h2 class="display-3 fw-bold mb-4">Not just skilling. <br>Industry-led capability building.</h2>
+                <p class="fs-3 text-muted mb-4">India does not suffer from a shortage of trained youth. It suffers from a shortage of industry-ready skills.</p>
+                <p class="text-muted fs-4">YPSVEF was created to bridge this gap by designing and delivering training that is defined by real job roles and modern systems.</p>
             </div>
             <div class="col-lg-6">
                 <div class="row g-4">
                     <div class="col-sm-6">
                         <div class="bg-white p-4 rounded-3 shadow-sm h-100 hover-lift">
-                            <div class="text-primary fs-3 mb-2"><i class="bi bi-gear-wide-connected"></i></div>
-                            <h5 class="fw-bold">Industry-led</h5>
-                            <p class="small text-muted mb-0">Defined by real job roles and industry systems.</p>
+                            <div class="text-primary fs-2 mb-2"><i class="bi bi-gear-wide-connected"></i></div>
+                            <h5 class="fw-bold fs-4">Industry-led</h5>
+                            <p class="text-muted mb-0 fs-6">Defined by real job roles and industry systems.</p>
                         </div>
                     </div>
                     <div class="col-sm-6">
                         <div class="bg-white p-4 rounded-3 shadow-sm h-100 hover-lift">
-                            <div class="text-primary fs-3 mb-2"><i class="bi bi-cpu"></i></div>
-                            <h5 class="fw-bold">Future-ready</h5>
-                            <p class="small text-muted mb-0">Aligned to green energy and smart infrastructure.</p>
+                            <div class="text-primary fs-2 mb-2"><i class="bi bi-cpu"></i></div>
+                            <h5 class="fw-bold fs-4">Future-ready</h5>
+                            <p class="text-muted mb-0 fs-6">Aligned to green energy and smart infrastructure.</p>
                         </div>
                     </div>
                     <div class="col-sm-6">
                         <div class="bg-white p-4 rounded-3 shadow-sm h-100 hover-lift">
-                            <div class="text-primary fs-3 mb-2"><i class="bi bi-graph-up-arrow"></i></div>
-                            <h5 class="fw-bold">Outcome-driven</h5>
-                            <p class="small text-muted mb-0">Focused on employment and micro-enterprises.</p>
+                            <div class="text-primary fs-2 mb-2"><i class="bi bi-graph-up-arrow"></i></div>
+                            <h5 class="fw-bold fs-4">Outcome-driven</h5>
+                            <p class="text-muted mb-0 fs-6">Focused on employment and micro-enterprises.</p>
                         </div>
                     </div>
                     <div class="col-sm-6">
                         <div class="bg-white p-4 rounded-3 shadow-sm h-100 hover-lift">
-                            <div class="text-primary fs-3 mb-2"><i class="bi bi-recycle"></i></div>
-                            <h5 class="fw-bold">Responsible</h5>
-                            <p class="small text-muted mb-0">Low-cost, zero-waste, and ESG-aligned.</p>
+                            <div class="text-primary fs-2 mb-2"><i class="bi bi-recycle"></i></div>
+                            <h5 class="fw-bold fs-4">Responsible</h5>
+                            <p class="text-muted mb-0 fs-6">Low-cost, zero-waste, and ESG-aligned.</p>
                         </div>
                     </div>
                 </div>
@@ -101,7 +101,7 @@
 <section class="py-5 bg-white">
     <div class="container py-5">
         <div class="text-center mb-5">
-            <h2 class="display-6 fw-bold">WHAT WE DO</h2>
+            <h2 class="display-4 fw-bold">WHAT WE DO</h2>
             <div class="bg-primary mx-auto my-3" style="width: 50px; height: 3px;"></div>
         </div>
 
@@ -116,13 +116,13 @@
                             </div>
                         </div>
                         <div class="col-sm-9">
-                            <h4 class="fw-bold">1. Future-Ready Vocational Training</h4>
-                            <p class="text-muted mb-3">High-demand skill domains critical to India's growth:</p>
-                            <ul class="list-unstyled small">
-                                <li class="mb-1"><i class="bi bi-dot text-primary me-2"></i>Green construction skills</li>
-                                <li class="mb-1"><i class="bi bi-dot text-primary me-2"></i>Electrical & electronics systems</li>
-                                <li class="mb-1"><i class="bi bi-dot text-primary me-2"></i>Energy, solar, and electrification skills</li>
-                                <li class="mb-1"><i class="bi bi-dot text-primary me-2"></i>Competition-oriented excellence</li>
+                            <h4 class="fw-bold fs-3">1. Future-Ready Vocational Training</h4>
+                            <p class="text-muted mb-3 fs-5">High-demand skill domains critical to India's growth:</p>
+                            <ul class="list-unstyled fs-5">
+                                <li class="mb-2"><i class="bi bi-dot text-primary me-2"></i>Green construction skills</li>
+                                <li class="mb-2"><i class="bi bi-dot text-primary me-2"></i>Electrical & electronics systems</li>
+                                <li class="mb-2"><i class="bi bi-dot text-primary me-2"></i>Energy, solar, and electrification skills</li>
+                                <li class="mb-2"><i class="bi bi-dot text-primary me-2"></i>Competition-oriented excellence</li>
                             </ul>
                         </div>
                     </div>
@@ -139,13 +139,13 @@
                             </div>
                         </div>
                         <div class="col-sm-9">
-                            <h4 class="fw-bold">2. Quality & Excellence as a System</h4>
-                            <p class="text-muted mb-3">Quality is a system, not a slogan:</p>
-                            <ul class="list-unstyled small">
-                                <li class="mb-1"><i class="bi bi-dot text-primary me-2"></i>SOP-driven training delivery</li>
-                                <li class="mb-1"><i class="bi bi-dot text-primary me-2"></i>Standardised labs and assessments</li>
-                                <li class="mb-1"><i class="bi bi-dot text-primary me-2"></i>Trainer upskilling and pedagogy</li>
-                                <li class="mb-1"><i class="bi bi-dot text-primary me-2"></i>Competition benchmarks for excellence</li>
+                            <h4 class="fw-bold fs-3">2. Quality & Excellence as a System</h4>
+                            <p class="text-muted mb-3 fs-5">Quality is a system, not a slogan:</p>
+                            <ul class="list-unstyled fs-5">
+                                <li class="mb-2"><i class="bi bi-dot text-primary me-2"></i>SOP-driven training delivery</li>
+                                <li class="mb-2"><i class="bi bi-dot text-primary me-2"></i>Standardised labs and assessments</li>
+                                <li class="mb-2"><i class="bi bi-dot text-primary me-2"></i>Trainer upskilling and pedagogy</li>
+                                <li class="mb-2"><i class="bi bi-dot text-primary me-2"></i>Competition benchmarks for excellence</li>
                             </ul>
                         </div>
                     </div>
@@ -162,12 +162,12 @@
                             </div>
                         </div>
                         <div class="col-sm-9">
-                            <h4 class="fw-bold">3. Zero-Waste, Low-Cost Skill Labs</h4>
-                            <p class="text-muted mb-3">Pioneers in zero-waste vocational training models:</p>
-                            <ul class="list-unstyled small">
-                                <li class="mb-1"><i class="bi bi-dot text-primary me-2"></i>Reduced material wastage / circular use</li>
-                                <li class="mb-1"><i class="bi bi-dot text-primary me-2"></i>Lower cost per trainee</li>
-                                <li class="mb-1"><i class="bi bi-dot text-primary me-2"></i>Scalable and sustainable labs</li>
+                            <h4 class="fw-bold fs-3">3. Zero-Waste, Low-Cost Skill Labs</h4>
+                            <p class="text-muted mb-3 fs-5">Pioneers in zero-waste vocational training models:</p>
+                            <ul class="list-unstyled fs-5">
+                                <li class="mb-2"><i class="bi bi-dot text-primary me-2"></i>Reduced material wastage / circular use</li>
+                                <li class="mb-2"><i class="bi bi-dot text-primary me-2"></i>Lower cost per trainee</li>
+                                <li class="mb-2"><i class="bi bi-dot text-primary me-2"></i>Scalable and sustainable labs</li>
                             </ul>
                         </div>
                     </div>
@@ -184,12 +184,12 @@
                             </div>
                         </div>
                         <div class="col-sm-9">
-                            <h4 class="fw-bold">4. Employability & Livelihood Outcomes</h4>
-                            <p class="text-muted mb-3">Success measured by livelihoods:</p>
-                            <ul class="list-unstyled small">
-                                <li class="mb-1"><i class="bi bi-dot text-primary me-2"></i>Wage employment & Apprenticeships</li>
-                                <li class="mb-1"><i class="bi bi-dot text-primary me-2"></i>Self-employment / micro-enterprises</li>
-                                <li class="mb-1"><i class="bi bi-dot text-primary me-2"></i>Close industry & ecosystem partnerships</li>
+                            <h4 class="fw-bold fs-3">4. Employability & Livelihood Outcomes</h4>
+                            <p class="text-muted mb-3 fs-5">Success measured by livelihoods:</p>
+                            <ul class="list-unstyled fs-5">
+                                <li class="mb-2"><i class="bi bi-dot text-primary me-2"></i>Wage employment & Apprenticeships</li>
+                                <li class="mb-2"><i class="bi bi-dot text-primary me-2"></i>Self-employment / micro-enterprises</li>
+                                <li class="mb-2"><i class="bi bi-dot text-primary me-2"></i>Close industry & ecosystem partnerships</li>
                             </ul>
                         </div>
                     </div>
@@ -204,10 +204,10 @@
     <div class="container py-5">
         <div class="row g-4 justify-content-center">
             <div class="col-lg-5">
-                <span class="text-primary text-uppercase fw-bold letter-spacing-1 mb-2 d-block">WHY YPSVEF</span>
-                <h2 class="display-6 fw-bold mb-4">What Sets Us Apart</h2>
-                <p class="text-muted mb-4">YPSVEF is built for credibility, scale, and long-term impact in the vocational education ecosystem.</p>
-                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=800&auto=format&fit=crop" class="img-fluid rounded-4 shadow" alt="Differentiation">
+                <span class="text-primary text-uppercase fw-bold letter-spacing-1 mb-2 d-block" style="font-size: 1.2rem;">WHY YPSVEF</span>
+                <h2 class="display-4 fw-bold mb-4">What Sets Us Apart</h2>
+                <p class="text-muted mb-4 fs-4">YPSVEF is built for credibility, scale, and long-term impact in the vocational education ecosystem.</p>
+                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1600&auto=format&fit=crop" class="img-fluid rounded-4 shadow" alt="Differentiation" style="max-width: 100%; height: auto;">
             </div>
             <div class="col-lg-6 offset-lg-1 d-flex flex-column justify-content-center">
                 <div class="d-flex align-items-start gap-3 mb-4">
@@ -215,8 +215,8 @@
                         <i class="bi bi-check-lg"></i>
                     </div>
                     <div>
-                        <h5 class="fw-bold mb-1">Industry-defined skills</h5>
-                        <p class="small text-muted mb-0">Driven by jobs, not just government schemes.</p>
+                        <h5 class="fw-bold mb-2 fs-3">Industry-defined skills</h5>
+                        <p class="text-muted mb-0 fs-5">Driven by jobs, not just government schemes.</p>
                     </div>
                 </div>
                 <div class="d-flex align-items-start gap-3 mb-4">
@@ -224,8 +224,8 @@
                         <i class="bi bi-check-lg"></i>
                     </div>
                     <div>
-                        <h5 class="fw-bold mb-1">Modern trades aligned to 2030</h5>
-                        <p class="small text-muted mb-0">Future-ready certifications for upcoming technologies.</p>
+                        <h5 class="fw-bold mb-2 fs-3">Modern trades aligned to 2030</h5>
+                        <p class="text-muted mb-0 fs-5">Future-ready certifications for upcoming technologies.</p>
                     </div>
                 </div>
                 <div class="d-flex align-items-start gap-3 mb-4">
@@ -233,8 +233,8 @@
                         <i class="bi bi-check-lg"></i>
                     </div>
                     <div>
-                        <h5 class="fw-bold mb-1">Competition-ready excellence</h5>
-                        <p class="small text-muted mb-0">Training that meets WorldSkills benchmarks.</p>
+                        <h5 class="fw-bold mb-2 fs-3">Competition-ready excellence</h5>
+                        <p class="text-muted mb-0 fs-5">Training that meets WorldSkills benchmarks.</p>
                     </div>
                 </div>
                 <div class="d-flex align-items-start gap-3 mb-4">
@@ -242,8 +242,8 @@
                         <i class="bi bi-check-lg"></i>
                     </div>
                     <div>
-                        <h5 class="fw-bold mb-1">Strong governance</h5>
-                        <p class="small text-muted mb-0">Accountability and transparency as foundation.</p>
+                        <h5 class="fw-bold mb-2 fs-3">Strong governance</h5>
+                        <p class="text-muted mb-0 fs-5">Accountability and transparency as foundation.</p>
                     </div>
                 </div>
                 <div class="d-flex align-items-start gap-3">
@@ -251,8 +251,8 @@
                         <i class="bi bi-check-lg"></i>
                     </div>
                     <div>
-                        <h5 class="fw-bold mb-1">CSR- and ESG-aligned</h5>
-                        <p class="small text-muted mb-0">Responsible implementation for long-term value.</p>
+                        <h5 class="fw-bold mb-2 fs-3">CSR- and ESG-aligned</h5>
+                        <p class="text-muted mb-0 fs-5">Responsible implementation for long-term value.</p>
                     </div>
                 </div>
             </div>
