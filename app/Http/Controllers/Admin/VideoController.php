@@ -41,8 +41,10 @@ class VideoController extends Controller
         $data = $request->except(['video_file']);
 
         if ($request->type === 'upload' && $request->hasFile('video_file')) {
-            $path = $request->file('video_file')->store('videos', 'public');
-            $data['video_url'] = 'storage/' . $path;
+            $file = $request->file('video_file');
+            $filename = time() . '_' . $file->getClientOriginalName();
+            $file->move(public_path('uploads/videos'), $filename);
+            $data['video_url'] = 'uploads/videos/' . $filename;
         }
 
         Video::create($data);
@@ -85,8 +87,14 @@ class VideoController extends Controller
         $data = $request->except(['video_file']);
 
         if ($request->type === 'upload' && $request->hasFile('video_file')) {
-            $path = $request->file('video_file')->store('videos', 'public');
-            $data['video_url'] = 'storage/' . $path;
+            // Delete old video if exists
+            if ($video->video_url && file_exists(public_path($video->video_url))) {
+                unlink(public_path($video->video_url));
+            }
+            $file = $request->file('video_file');
+            $filename = time() . '_' . $file->getClientOriginalName();
+            $file->move(public_path('uploads/videos'), $filename);
+            $data['video_url'] = 'uploads/videos/' . $filename;
         } elseif ($request->type === 'url') {
             // Ensure we keep the url if it was switched back or changed
             $data['video_url'] = $request->video_url;

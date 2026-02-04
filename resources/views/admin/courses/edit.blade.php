@@ -48,7 +48,7 @@
                             <label class="form-label fw-bold">Course Thumbnail</label>
                             @if($course->thumbnail)
                                 <div class="mb-2">
-                                    <img src="{{ asset('storage/' . $course->thumbnail) }}" alt="Current Thumbnail" class="img-thumbnail" style="max-height: 150px;">
+                                    <img src="{{ asset($course->thumbnail) }}" alt="Current Thumbnail" class="img-thumbnail" style="max-height: 150px;">
                                 </div>
                             @endif
                             <input type="file" name="thumbnail" class="form-control @error('thumbnail') is-invalid @enderror" accept="image/*">

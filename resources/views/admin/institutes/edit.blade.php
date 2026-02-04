@@ -33,7 +33,7 @@
                         <div class="mb-3">
                             <label class="form-label fw-bold">Thumbnail Image</label>
                             <div class="d-flex align-items-center mb-2">
-                                <img src="{{ asset('storage/' . $institute->thumbnail) }}" class="rounded me-3" style="width: 80px; height: 50px; object-fit: cover;">
+                                <img src="{{ asset($institute->thumbnail) }}" class="rounded me-3" style="width: 80px; height: 50px; object-fit: cover;">
                                 <div class="flex-grow-1">
                                     <input type="file" name="thumbnail" class="form-control @error('thumbnail') is-invalid @enderror" accept="image/*">
                                 </div>

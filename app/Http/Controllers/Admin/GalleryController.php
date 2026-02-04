@@ -46,8 +46,8 @@ class GalleryController extends Controller implements HasMiddleware
             // First image as primary
             $primaryImage = $files[0];
             $primaryName = time().'_0.'.$primaryImage->extension();
-            $primaryImage->move(public_path('storage/gallery'), $primaryName);
-            $data['image_path'] = '/storage/gallery/' . $primaryName;
+            $primaryImage->move(public_path('uploads/gallery'), $primaryName);
+            $data['image_path'] = 'uploads/gallery/' . $primaryName;
             
             $gallery = Gallery::create($data);
 
@@ -57,8 +57,8 @@ class GalleryController extends Controller implements HasMiddleware
                     $imagePath = $data['image_path'];
                 } else {
                     $imageName = time().'_'.$index.'.'.$file->extension();
-                    $file->move(public_path('storage/gallery'), $imageName);
-                    $imagePath = '/storage/gallery/' . $imageName;
+                    $file->move(public_path('uploads/gallery'), $imageName);
+                    $imagePath = 'uploads/gallery/' . $imageName;
                 }
                 
                 \App\Models\GalleryImage::create([
@@ -102,8 +102,8 @@ class GalleryController extends Controller implements HasMiddleware
             // First image as primary
             $primaryImage = $files[0];
             $primaryName = time().'_0.'.$primaryImage->extension();
-            $primaryImage->move(public_path('storage/gallery'), $primaryName);
-            $data['image_path'] = '/storage/gallery/' . $primaryName;
+            $primaryImage->move(public_path('uploads/gallery'), $primaryName);
+            $data['image_path'] = 'uploads/gallery/' . $primaryName;
             
             $gallery->update($data);
 
@@ -113,8 +113,8 @@ class GalleryController extends Controller implements HasMiddleware
                     $imagePath = $data['image_path'];
                 } else {
                     $imageName = time().'_'.$index.'.'.$file->extension();
-                    $file->move(public_path('storage/gallery'), $imageName);
-                    $imagePath = '/storage/gallery/' . $imageName;
+                    $file->move(public_path('uploads/gallery'), $imageName);
+                    $imagePath = 'uploads/gallery/' . $imageName;
                 }
                 
                 \App\Models\GalleryImage::create([

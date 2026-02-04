@@ -26,7 +26,7 @@
             </div>
             <div class="col-lg-4 mt-5 mt-lg-0">
                 <div class="card border-0 shadow-lg overflow-hidden">
-                    <img src="{{ $course->thumbnail ? asset('storage/' . $course->thumbnail) : 'https://via.placeholder.com/800x450?text=' . urlencode($course->title) }}" class="card-img-top" alt="{{ $course->title }}">
+                    <img src="{{ $course->thumbnail ? asset($course->thumbnail) : 'https://via.placeholder.com/800x450?text=' . urlencode($course->title) }}" class="card-img-top" alt="{{ $course->title }}">
                     <div class="card-body p-4">
                         <div class="h2 fw-bold mb-4">${{ number_format($course->price, 2) }}</div>
                         @if($isEnrolled)

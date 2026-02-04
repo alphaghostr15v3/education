@@ -32,8 +32,10 @@ class InstituteController extends Controller
         ]);
 
         if ($request->hasFile('thumbnail')) {
-            $path = $request->file('thumbnail')->store('institutes', 'public');
-            $validated['thumbnail'] = $path;
+            $file = $request->file('thumbnail');
+            $filename = time() . '_' . $file->getClientOriginalName();
+            $file->move(public_path('uploads/institutes'), $filename);
+            $validated['thumbnail'] = 'uploads/institutes/' . $filename;
         }
 
         \App\Models\Institute::create($validated);
@@ -66,8 +68,13 @@ class InstituteController extends Controller
 
         if ($request->hasFile('thumbnail')) {
             // Optional: Delete old image
-            $path = $request->file('thumbnail')->store('institutes', 'public');
-            $validated['thumbnail'] = $path;
+            if ($institute->thumbnail && file_exists(public_path($institute->thumbnail))) {
+                unlink(public_path($institute->thumbnail));
+            }
+            $file = $request->file('thumbnail');
+            $filename = time() . '_' . $file->getClientOriginalName();
+            $file->move(public_path('uploads/institutes'), $filename);
+            $validated['thumbnail'] = 'uploads/institutes/' . $filename;
         }
 
         $institute->update($validated);

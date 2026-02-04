@@ -37,7 +37,7 @@
                     <div class="col-md-6 col-xl-4">
                         <div class="card border-0 shadow-sm h-100 hover-lift transition">
                             <div class="position-relative">
-                                <img src="{{ $course->thumbnail ? asset('storage/' . $course->thumbnail) : 'https://via.placeholder.com/400x225?text=' . urlencode($course->title) }}" class="card-img-top" alt="{{ $course->title }}">
+                                <img src="{{ $course->thumbnail ? asset($course->thumbnail) : 'https://via.placeholder.com/400x225?text=' . urlencode($course->title) }}" class="card-img-top" alt="{{ $course->title }}">
                                 <span class="badge bg-primary position-absolute top-0 end-0 m-3 shadow-sm">{{ $course->category->name }}</span>
                             </div>
                             <div class="card-body p-4 d-flex flex-column">

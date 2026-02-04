@@ -13,7 +13,7 @@
         @forelse($institutes as $institute)
         <div class="col-md-6">
             <div class="card h-100 border-0 shadow-sm overflow-hidden hover-lift transition">
-                 <img src="{{ asset('storage/' . $institute->thumbnail) }}" class="card-img-top" alt="{{ $institute->title }}" style="height: 300px; object-fit: cover;">
+                 <img src="{{ asset($institute->thumbnail) }}" class="card-img-top" alt="{{ $institute->title }}" style="height: 300px; object-fit: cover;">
                 <div class="card-body p-4">
                     <h3 class="fw-bold mb-3">{{ $institute->title }}</h3>
                     <p class="text-muted mb-4">{{ $institute->description }}</p>

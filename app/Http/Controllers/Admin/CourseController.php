@@ -34,8 +34,10 @@ class CourseController extends Controller
         $validated['status'] = 'published';
 
         if ($request->hasFile('thumbnail')) {
-            $path = $request->file('thumbnail')->store('courses', 'public');
-            $validated['thumbnail'] = $path;
+            $file = $request->file('thumbnail');
+            $filename = time() . '_' . $file->getClientOriginalName();
+            $file->move(public_path('uploads/courses'), $filename);
+            $validated['thumbnail'] = 'uploads/courses/' . $filename;
         }
 
         \App\Models\Course::create($validated);
@@ -62,8 +64,14 @@ class CourseController extends Controller
         $validated['slug'] = \Illuminate\Support\Str::slug($validated['title']);
 
         if ($request->hasFile('thumbnail')) {
-            $path = $request->file('thumbnail')->store('courses', 'public');
-            $validated['thumbnail'] = $path;
+            // Delete old thumbnail if exists
+            if ($course->thumbnail && file_exists(public_path($course->thumbnail))) {
+                unlink(public_path($course->thumbnail));
+            }
+            $file = $request->file('thumbnail');
+            $filename = time() . '_' . $file->getClientOriginalName();
+            $file->move(public_path('uploads/courses'), $filename);
+            $validated['thumbnail'] = 'uploads/courses/' . $filename;
         }
         
         $course->update($validated);

@@ -39,7 +39,7 @@
                         @forelse($institutes as $institute)
                             <tr>
                                 <td class="px-4">
-                                    <img src="{{ asset('storage/' . $institute->thumbnail) }}" alt="Thumb" class="rounded" style="width: 60px; height: 60px; object-fit: cover;">
+                                    <img src="{{ asset($institute->thumbnail) }}" alt="Thumb" class="rounded" style="width: 60px; height: 60px; object-fit: cover;">
                                 </td>
                                 <td>
                                     <div class="fw-bold">{{ $institute->title }}</div>
