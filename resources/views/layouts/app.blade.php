@@ -191,5 +191,13 @@
         .hover-white:hover { color: #fff !important; }
         footer .text-muted { color: #b0b0b0 !important; }
     </style>
+    <div class="floating-contact-buttons">
+        <a href="https://wa.me/911234567890" target="_blank" class="floating-btn btn-whatsapp" title="Chat on WhatsApp">
+            <i class="bi bi-whatsapp"></i>
+        </a>
+        <a href="tel:+913322488908" class="floating-btn btn-call" title="Call Us">
+            <i class="bi bi-telephone-fill"></i>
+        </a>
+    </div>
 </body>
 </html>
