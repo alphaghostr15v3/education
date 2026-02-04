@@ -30,7 +30,7 @@
                         @forelse($galleries as $gallery)
                             <tr>
                                 <td>
-                                    <img src="{{ $gallery->image_path }}" alt="{{ $gallery->title }}" class="rounded shadow-sm" style="width: 80px; height: 50px; object-fit: cover;">
+                                    <img src="{{ asset($gallery->image_path) }}" alt="{{ $gallery->title }}" class="rounded shadow-sm" style="width: 80px; height: 50px; object-fit: cover;">
                                 </td>
                                 <td>{{ $gallery->title }}</td>
                                 <td><span class="badge bg-soft text-primary">{{ $gallery->category ?: 'General' }}</span></td>
