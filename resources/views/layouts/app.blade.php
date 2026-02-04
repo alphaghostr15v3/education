@@ -23,13 +23,7 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
             <div class="container">
                 <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
-                    <div class="bg-primary rounded-circle d-flex align-items-center justify-content-center me-2" style="width: 45px; height: 45px;">
-                        <span class="text-white fw-bold" style="font-size: 1.2rem;">Y</span>
-                    </div>
-                    <div>
-                        <span class="fw-bold fs-4 text-dark d-block leading-none">YPSVEF</span>
-                        <small class="text-muted d-none d-lg-block" style="font-size: 0.7rem; margin-top: -5px;">Vocational Education Foundation</small>
-                    </div>
+                    <img src="{{ asset('images/ysvef-logo.png') }}" alt="YSVEF Logo" style="height: 70px; width: auto;">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -143,11 +137,8 @@
             <div class="container">
                 <div class="row g-4">
                     <div class="col-lg-4">
-                        <div class="d-flex align-items-center mb-4">
-                            <div class="bg-primary rounded-circle d-flex align-items-center justify-content-center me-2" style="width: 40px; height: 40px;">
-                                <span class="text-white fw-bold">Y</span>
-                            </div>
-                            <span class="fw-bold fs-4">YPSVEF</span>
+                        <div class="mb-4">
+                            <img src="{{ asset('images/ysvef-logo.png') }}" alt="YSVEF Logo" style="height: 50px; width: auto;">
                         </div>
                         <p class="text-muted small">Building future-ready vocational skills for a green, modern India. A not-for-profit initiative dedicated to industry-aligned excellence.</p>
                         <div class="d-flex gap-3 mt-4">
