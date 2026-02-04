@@ -23,7 +23,7 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
             <div class="container">
                 <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
-                    <img src="{{ asset('images/ysvef-logo.png') }}" alt="YSVEF Logo" style="height: 70px; width: auto;">
+                    <img src="{{ asset('images/ysvef-logo.png') }}" alt="YSVEF Logo" style="height: 100px; width: auto;">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
