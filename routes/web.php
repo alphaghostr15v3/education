@@ -33,12 +33,15 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
     Route::resource('videos', VideoController::class);
     Route::resource('institutes', InstituteController::class);
     Route::resource('blogs', BlogController::class);
+    Route::resource('blogs', BlogController::class);
     Route::resource('teams', TeamController::class);
+    Route::resource('newsletters', \App\Http\Controllers\Admin\NewsletterController::class);
 });
 
 // Student/Public Routes
 Route::get('/courses', [\App\Http\Controllers\CourseController::class, 'index'])->name('courses.index');
 Route::get('/courses/{slug}', [\App\Http\Controllers\CourseController::class, 'show'])->name('courses.show');
+Route::get('/newsletters', [App\Http\Controllers\PageController::class, 'newsletters'])->name('newsletters');
 
 // Public Pages
 Route::get('/about', [App\Http\Controllers\PageController::class, 'about'])->name('about');

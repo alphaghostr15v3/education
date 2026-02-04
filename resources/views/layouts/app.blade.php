@@ -79,6 +79,7 @@
                                 <li><a class="dropdown-item" href="{{ route('blog') }}">News & Blog</a></li>
                                 <li><a class="dropdown-item" href="{{ route('team') }}">Our Team</a></li>
                                 <li><a class="dropdown-item" href="{{ route('faq') }}">FAQ</a></li>
+                                <li><a class="dropdown-item" href="{{ route('newsletters') }}">Newsletters</a></li>
                                 <li><a class="dropdown-item" href="{{ route('pricing') }}">Pricing</a></li>
                             </ul>
                         </li>

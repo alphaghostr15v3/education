@@ -66,4 +66,12 @@ class PageController extends Controller
         return view('pages.team', compact('teams'));
     }
     public function pricing() { return view('pages.pricing'); }
+
+    public function newsletters()
+    {
+        $newsletters = \App\Models\Newsletter::where('is_active', true)
+                                           ->orderBy('published_date', 'desc')
+                                           ->get();
+        return view('pages.newsletters', compact('newsletters'));
+    }
 }
