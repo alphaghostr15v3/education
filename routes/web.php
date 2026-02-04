@@ -11,6 +11,8 @@ use App\Http\Controllers\Admin\EventController;
 use App\Http\Controllers\Admin\VideoController;
 use App\Http\Controllers\Admin\InstituteController;
 use App\Http\Controllers\Admin\HeroSlideController;
+use App\Http\Controllers\Admin\BlogController;
+use App\Http\Controllers\Admin\TeamController;
 
 Route::get('/', [App\Http\Controllers\PageController::class, 'index'])->name('home');
 
@@ -30,6 +32,8 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
     Route::resource('hero-slides', HeroSlideController::class);
     Route::resource('videos', VideoController::class);
     Route::resource('institutes', InstituteController::class);
+    Route::resource('blogs', BlogController::class);
+    Route::resource('teams', TeamController::class);
 });
 
 // Student/Public Routes
@@ -49,6 +53,7 @@ Route::get('/events', [App\Http\Controllers\PageController::class, 'events'])->n
 Route::get('/gallery', [App\Http\Controllers\PageController::class, 'gallery'])->name('gallery');
 Route::get('/media/videos', [\App\Http\Controllers\VideoController::class, 'index'])->name('videos.index');
 Route::get('/blog', [App\Http\Controllers\PageController::class, 'blog'])->name('blog');
+Route::get('/blog/{slug}', [App\Http\Controllers\PageController::class, 'blogDetail'])->name('blog.detail');
 Route::get('/contact', [App\Http\Controllers\PageController::class, 'contact'])->name('contact');
 
 // Sub Pages

@@ -141,6 +141,24 @@
                                 <i class="bi bi-chevron-right"></i>
                             </div>
                         </a>
+                        <a href="{{ route('admin.blogs.index') }}" class="list-group-item list-group-item-action border-0 px-0">
+                            <div class="d-flex w-100 justify-content-between align-items-center">
+                                <div>
+                                    <h6 class="mb-1 fw-bold">Manage Blog Posts</h6>
+                                    <p class="mb-1 text-muted small">Create and publish educational blog content.</p>
+                                </div>
+                                <i class="bi bi-chevron-right"></i>
+                            </div>
+                        </a>
+                        <a href="{{ route('admin.teams.index') }}" class="list-group-item list-group-item-action border-0 px-0">
+                            <div class="d-flex w-100 justify-content-between align-items-center">
+                                <div>
+                                    <h6 class="mb-1 fw-bold">Manage Team Members</h6>
+                                    <p class="mb-1 text-muted small">Add and update team member profiles.</p>
+                                </div>
+                                <i class="bi bi-chevron-right"></i>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>

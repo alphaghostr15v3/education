@@ -21,30 +21,32 @@
     </div>
 
     <div class="row g-4">
-        <div class="col-md-4">
-            <div class="card border-0 shadow-sm text-center p-4">
-                <img src="https://via.placeholder.com/150?text=CEO" class="rounded-circle mx-auto mb-4" width="120" height="120">
-                <h5 class="fw-bold mb-1">Jane Doe</h5>
-                <p class="text-primary small mb-3">CEO & Founder</p>
-                <p class="small text-muted">A visionary leader with a passion for transformative education technology.</p>
+        @forelse($teams as $member)
+            <div class="col-md-4">
+                <div class="card border-0 shadow-sm text-center p-4">
+                    @if($member->photo)
+                        <img src="{{ asset($member->photo) }}" class="rounded-circle mx-auto mb-4" width="120" height="120" style="object-fit: cover;">
+                    @else
+                        <div class="rounded-circle mx-auto mb-4 bg-secondary d-flex align-items-center justify-content-center" style="width: 120px; height: 120px;">
+                            <i class="bi bi-person text-white display-5"></i>
+                        </div>
+                    @endif
+                    <h5 class="fw-bold mb-1">{{ $member->name }}</h5>
+                    <p class="text-primary small mb-3">{{ $member->position }}</p>
+                    @if($member->bio)
+                        <p class="small text-muted">{{ $member->bio }}</p>
+                    @endif
+                </div>
             </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card border-0 shadow-sm text-center p-4">
-                <img src="https://via.placeholder.com/150?text=CTO" class="rounded-circle mx-auto mb-4" width="120" height="120">
-                <h5 class="fw-bold mb-1">John Smith</h5>
-                <p class="text-primary small mb-3">Chief Technology Officer</p>
-                <p class="small text-muted">Architecting the future of online learning with scalable modern tech stacks.</p>
+        @empty
+            <div class="col-12">
+                <div class="text-center py-5">
+                    <i class="bi bi-people display-1 text-muted"></i>
+                    <h3 class="mt-3 text-muted">No leadership members yet</h3>
+                    <p class="text-muted">Check back soon!</p>
+                </div>
             </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card border-0 shadow-sm text-center p-4">
-                <img src="https://via.placeholder.com/150?text=COO" class="rounded-circle mx-auto mb-4" width="120" height="120">
-                <h5 class="fw-bold mb-1">Alex Rivera</h5>
-                <p class="text-primary small mb-3">Chief Operations Officer</p>
-                <p class="small text-muted">Ensuring operational excellence and student satisfaction across the globe.</p>
-            </div>
-        </div>
+        @endforelse
     </div>
 
     <div class="mt-5 p-5 bg-light rounded-4 border">

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Gallery;
 use App\Models\Event;
 use App\Models\HeroSlide;
+use App\Models\Blog;
+use App\Models\Team;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -32,7 +34,11 @@ class PageController extends Controller
     public function about() { return view('pages.about'); }
     public function mission() { return view('pages.mission'); }
     public function story() { return view('pages.story'); }
-    public function leadership() { return view('pages.leadership'); }
+    public function leadership()
+    {
+        $teams = Team::orderBy('order')->get();
+        return view('pages.leadership', compact('teams'));
+    }
     public function partners() { return view('pages.partners'); }
     public function institutes()
     {
@@ -41,9 +47,23 @@ class PageController extends Controller
     }
     public function institutions() { return view('pages.institutions'); }
     public function curriculum() { return view('pages.curriculum'); }
-    public function blog() { return view('pages.blog'); }
+    public function blog()
+    {
+        $blogs = Blog::published()->with('author')->latest('published_at')->paginate(9);
+        return view('pages.blog', compact('blogs'));
+    }
+    
+    public function blogDetail($slug)
+    {
+        $blog = Blog::where('slug', $slug)->published()->firstOrFail();
+        return view('pages.blog-detail', compact('blog'));
+    }
     public function contact() { return view('pages.contact'); }
     public function faq() { return view('pages.faq'); }
-    public function team() { return view('pages.team'); }
+    public function team()
+    {
+        $teams = Team::orderBy('order')->get();
+        return view('pages.team', compact('teams'));
+    }
     public function pricing() { return view('pages.pricing'); }
 }
