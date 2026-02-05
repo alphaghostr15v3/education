@@ -40,8 +40,8 @@ class BlogController extends Controller
 
         if ($request->hasFile('featured_image')) {
             $uploadPath = public_path('uploads/blogs');
-            if (!File::isDirectory($uploadPath)) {
-                File::makeDirectory($uploadPath, 0775, true, true);
+            if (!File::exists($uploadPath)) {
+                File::makeDirectory($uploadPath, 0755, true);
             }
             $file = $request->file('featured_image');
             $filename = time() . '_' . $file->getClientOriginalName();

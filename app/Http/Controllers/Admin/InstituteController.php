@@ -34,8 +34,8 @@ class InstituteController extends Controller
 
         if ($request->hasFile('thumbnail')) {
             $uploadPath = public_path('uploads/institutes');
-            if (!File::isDirectory($uploadPath)) {
-                File::makeDirectory($uploadPath, 0775, true, true);
+            if (!File::exists($uploadPath)) {
+                File::makeDirectory($uploadPath, 0755, true);
             }
             $file = $request->file('thumbnail');
             $filename = time() . '_' . $file->getClientOriginalName();

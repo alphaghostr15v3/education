@@ -45,8 +45,8 @@ class GalleryController extends Controller implements HasMiddleware
             $files = $request->file('images');
             
             $uploadPath = public_path('uploads/gallery');
-            if (!File::isDirectory($uploadPath)) {
-                File::makeDirectory($uploadPath, 0775, true, true);
+            if (!File::exists($uploadPath)) {
+                File::makeDirectory($uploadPath, 0755, true);
             }
             
             // First image as primary

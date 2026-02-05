@@ -43,8 +43,8 @@ class VideoController extends Controller
 
         if ($request->type === 'upload' && $request->hasFile('video_file')) {
             $uploadPath = public_path('uploads/videos');
-            if (!File::isDirectory($uploadPath)) {
-                File::makeDirectory($uploadPath, 0775, true, true);
+            if (!File::exists($uploadPath)) {
+                File::makeDirectory($uploadPath, 0755, true);
             }
             $file = $request->file('video_file');
             $filename = time() . '_' . $file->getClientOriginalName();

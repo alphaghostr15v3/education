@@ -33,8 +33,8 @@ class NewsletterController extends Controller
         $path = '';
         if ($request->hasFile('file')) {
             $uploadPath = public_path('uploads/newsletters');
-            if (!File::isDirectory($uploadPath)) {
-                File::makeDirectory($uploadPath, 0775, true, true);
+            if (!File::exists($uploadPath)) {
+                File::makeDirectory($uploadPath, 0755, true);
             }
             $file = $request->file('file');
             $filename = time() . '_' . $file->getClientOriginalName();
@@ -44,9 +44,13 @@ class NewsletterController extends Controller
 
         $thumbnailPath = null;
         if ($request->hasFile('thumbnail')) {
+            $uploadPath = public_path('uploads/newsletters/thumbnails');
+            if (!File::exists($uploadPath)) {
+                File::makeDirectory($uploadPath, 0755, true);
+            }
             $thumbnail = $request->file('thumbnail');
             $thumbnailName = time() . '_thumb_' . $thumbnail->getClientOriginalName();
-            $thumbnail->move(public_path('uploads/newsletters/thumbnails'), $thumbnailName);
+            $thumbnail->move($uploadPath, $thumbnailName);
             $thumbnailPath = 'uploads/newsletters/thumbnails/' . $thumbnailName;
         }
 
@@ -86,8 +90,8 @@ class NewsletterController extends Controller
 
         if ($request->hasFile('file')) {
             $uploadPath = public_path('uploads/newsletters');
-            if (!File::isDirectory($uploadPath)) {
-                File::makeDirectory($uploadPath, 0775, true, true);
+            if (!File::exists($uploadPath)) {
+                File::makeDirectory($uploadPath, 0755, true);
             }
             // Delete old file
             if ($newsletter->file_path && File::exists(public_path($newsletter->file_path))) {
@@ -102,8 +106,8 @@ class NewsletterController extends Controller
 
         if ($request->hasFile('thumbnail')) {
             $uploadPath = public_path('uploads/newsletters/thumbnails');
-            if (!File::isDirectory($uploadPath)) {
-                File::makeDirectory($uploadPath, 0775, true, true);
+            if (!File::exists($uploadPath)) {
+                File::makeDirectory($uploadPath, 0755, true);
             }
             // Delete old thumbnail
             if ($newsletter->thumbnail && File::exists(public_path($newsletter->thumbnail))) {

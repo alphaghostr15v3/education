@@ -46,8 +46,8 @@ class EventController extends Controller implements HasMiddleware
 
         if ($request->hasFile('image')) {
             $uploadPath = public_path('storage/events');
-            if (!File::isDirectory($uploadPath)) {
-                File::makeDirectory($uploadPath, 0775, true, true);
+            if (!File::exists($uploadPath)) {
+                File::makeDirectory($uploadPath, 0755, true);
             }
             $imageName = time().'.'.$request->image->extension();
             $request->image->move($uploadPath, $imageName);

@@ -33,8 +33,8 @@ class AlumniSuccessController extends Controller
 
         if ($request->hasFile('image')) {
             $uploadPath = public_path('uploads/alumni');
-            if (!File::isDirectory($uploadPath)) {
-                File::makeDirectory($uploadPath, 0775, true, true);
+            if (!File::exists($uploadPath)) {
+                File::makeDirectory($uploadPath, 0755, true);
             }
             $file = $request->file('image');
             $filename = time() . '_' . $file->getClientOriginalName();
