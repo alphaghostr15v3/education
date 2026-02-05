@@ -1,22 +1,24 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('content')
-<div class="container py-4">
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
-            <li class="breadcrumb-item"><a href="{{ route('admin.courses.index') }}">Courses</a></li>
-            <li class="breadcrumb-item active">New Course</li>
-        </ol>
-    </nav>
+<div class="row mb-4">
+    <div class="col-12">
+        <div class="d-flex align-items-center">
+            <a href="{{ route('admin.courses.index') }}" class="btn btn-outline-secondary btn-sm me-3">
+                <i class="bi bi-arrow-left"></i>
+            </a>
+            <div>
+                <h2 class="fw-bold h4 mb-0">Create Course</h2>
+                <p class="text-muted small">Add a new educational course to the system.</p>
+            </div>
+        </div>
+    </div>
+</div>
 
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card border-0 shadow-sm mt-3">
-                <div class="card-header bg-white border-0 py-3">
-                    <h4 class="mb-0 fw-bold">Create New Course</h4>
-                </div>
-                <div class="card-body p-4">
+<div class="row justify-content-center">
+    <div class="col-md-10">
+        <div class="card admin-card">
+            <div class="card-body p-4">
                     <form action="{{ route('admin.courses.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="mb-3">
@@ -63,7 +65,6 @@
                     </form>
                 </div>
             </div>
-        </div>
     </div>
 </div>
 @endsection

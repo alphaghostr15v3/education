@@ -1,11 +1,12 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('content')
-<div class="container">
-    <div class="mb-4">
-        <h2 class="fw-bold">User Management</h2>
-        <p class="text-muted">Overview of all registered students and administrators.</p>
+<div class="row mb-4">
+    <div class="col-12">
+        <h2 class="fw-bold h4 mb-0">Manage Users</h2>
+        <p class="text-muted small">Monitor student activity and administrative roles.</p>
     </div>
+</div>
 
     @if(session('success'))
         <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -20,10 +21,11 @@
         </div>
     @endif
 
-    <div class="card border-0 shadow-sm">
+<div class="card admin-card">
+    <div class="card-body">
         <div class="table-responsive">
-            <table class="table table-hover align-middle mb-0">
-                <thead class="bg-light">
+            <table class="table table-hover align-middle admin-table">
+                <thead class="table-light">
                     <tr>
                         <th class="px-4 py-3">User</th>
                         <th class="py-3">Role</th>

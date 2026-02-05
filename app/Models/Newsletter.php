@@ -11,6 +11,8 @@ class Newsletter extends Model
 
     protected $fillable = [
         'title',
+        'thumbnail',
+        'description',
         'file_path',
         'published_date',
         'is_active',

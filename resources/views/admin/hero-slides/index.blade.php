@@ -1,16 +1,19 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('content')
-<div class="container py-5">
-    <div class="d-flex justify-content-between align-items-center mb-4">
-        <div>
-            <h2 class="fw-bold mb-0">Hero Slider Photos</h2>
-            <p class="text-muted">Manage the background images for your home page hero section.</p>
+<div class="row mb-4">
+    <div class="col-12">
+        <div class="d-flex justify-content-between align-items-center">
+            <div>
+                <h2 class="fw-bold h4 mb-0">Manage Hero Photos</h2>
+                <p class="text-muted small">Update background slider images for the home page.</p>
+            </div>
+            <a href="{{ route('admin.hero-slides.create') }}" class="btn btn-primary">
+                <i class="bi bi-plus-lg me-1"></i> Add Hero Slide
+            </a>
         </div>
-        <a href="{{ route('admin.hero-slides.create') }}" class="btn btn-primary d-flex align-items-center gap-2">
-            <i class="bi bi-plus-lg"></i> Add New Slide
-        </a>
     </div>
+</div>
 
     @if(session('success'))
         <div class="alert alert-success alert-dismissible fade show mb-4" role="alert">
@@ -19,9 +22,10 @@
         </div>
     @endif
 
-    <div class="card border-0 shadow-sm overflow-hidden rounded-4">
+<div class="card admin-card">
+    <div class="card-body">
         <div class="table-responsive">
-            <table class="table table-hover align-middle mb-0">
+            <table class="table table-hover align-middle admin-table">
                 <thead class="table-light">
                     <tr>
                         <th class="ps-4" style="width: 150px;">Preview</th>

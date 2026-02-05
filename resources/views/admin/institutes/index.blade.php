@@ -1,20 +1,19 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('content')
-<div class="container py-4">
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
-            <li class="breadcrumb-item active">Institutes</li>
-        </ol>
-    </nav>
-
-    <div class="d-flex justify-content-between align-items-center mb-4">
-        <h2 class="mb-0 fw-bold">Institutes & Programs</h2>
-        <a href="{{ route('admin.institutes.create') }}" class="btn btn-primary">
-            <i class="bi bi-plus-lg me-1"></i> Add New
-        </a>
+<div class="row mb-4">
+    <div class="col-12">
+        <div class="d-flex justify-content-between align-items-center">
+            <div>
+                <h2 class="fw-bold h4 mb-0">Manage Institutes</h2>
+                <p class="text-muted small">Update institute programs and descriptions.</p>
+            </div>
+            <a href="{{ route('admin.institutes.create') }}" class="btn btn-primary">
+                <i class="bi bi-plus-lg me-1"></i> Add Institute
+            </a>
+        </div>
     </div>
+</div>
 
     @if(session('success'))
         <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -23,11 +22,11 @@
         </div>
     @endif
 
-    <div class="card border-0 shadow-sm">
+    <div class="card admin-card">
         <div class="card-body p-0">
             <div class="table-responsive">
-                <table class="table table-hover align-middle mb-0">
-                    <thead class="bg-light text-secondary small text-uppercase">
+                <table class="table table-hover align-middle admin-table">
+                    <thead class="table-light">
                         <tr>
                             <th class="px-4 py-3">Thumbnail</th>
                             <th class="py-3">Title</th>
@@ -79,5 +78,4 @@
             </div>
         </div>
     </div>
-</div>
 @endsection

@@ -1,23 +1,18 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('content')
-<div class="container-fluid px-4">
-    <div class="d-flex justify-content-between align-items-center mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Contact Messages</h1>
+<div class="row mb-4">
+    <div class="col-12">
+        <h2 class="fw-bold h4 mb-0">Contact Messages</h2>
+        <p class="text-muted small">Manage inquiries from the contact form.</p>
     </div>
+</div>
 
-    @if(session('success'))
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
-            {{ session('success') }}
-            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-        </div>
-    @endif
-
-    <div class="card shadow-sm">
-        <div class="card-body">
-            <div class="table-responsive">
-                <table class="table table-hover align-middle">
-                    <thead class="table-light">
+<div class="card admin-card">
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-hover align-middle admin-table">
+                <thead class="table-light">
                         <tr>
                             <th>Name</th>
                             <th>Email</th>

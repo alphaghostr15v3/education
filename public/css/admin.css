@@ -1,0 +1,129 @@
+:root {
+    --admin-sidebar-width: 260px;
+    --admin-sidebar-bg: #2c3e50;
+    --admin-sidebar-color: #ecf0f1;
+    --admin-primary: #3498db;
+    --admin-bg-light: #f8f9fa;
+    --admin-card-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+body {
+    background-color: var(--admin-bg-light);
+    font-family: 'Nunito', sans-serif;
+}
+
+#admin-wrapper {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+}
+
+/* Sidebar Styling */
+#admin-sidebar {
+    min-width: var(--admin-sidebar-width);
+    max-width: var(--admin-sidebar-width);
+    background: var(--admin-sidebar-bg);
+    color: var(--admin-sidebar-color);
+    transition: all 0.3s;
+    min-height: 100vh;
+    z-index: 1000;
+}
+
+#admin-sidebar .sidebar-header {
+    padding: 20px;
+    background: rgba(0,0,0,0.1);
+}
+
+#admin-sidebar ul.components {
+    padding: 20px 0;
+}
+
+#admin-sidebar ul li a {
+    padding: 12px 20px;
+    font-size: 0.95rem;
+    display: block;
+    color: var(--admin-sidebar-color);
+    text-decoration: none;
+    transition: all 0.3s;
+    opacity: 0.8;
+}
+
+#admin-sidebar ul li a:hover {
+    background: rgba(255,255,255,0.1);
+    opacity: 1;
+    padding-left: 25px;
+}
+
+#admin-sidebar ul li.active > a {
+    background: var(--admin-primary);
+    opacity: 1;
+}
+
+#admin-sidebar ul li a i {
+    margin-right: 10px;
+    width: 20px;
+    text-align: center;
+}
+
+/* Content Area */
+#admin-content {
+    width: 100%;
+    min-height: 100vh;
+    transition: all 0.3s;
+}
+
+#admin-navbar {
+    padding: 15px 30px;
+    background: #fff;
+    border: none;
+    border-radius: 0;
+    margin-bottom: 40px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.admin-main-content {
+    padding: 0 30px 40px 30px;
+}
+
+/* Card Improvements */
+.admin-card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: var(--admin-card-shadow);
+    transition: transform 0.2s;
+}
+
+.admin-card:hover {
+    transform: translateY(-2px);
+}
+
+/* Breadcrumb Styling */
+.admin-breadcrumb {
+    background: transparent;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+/* Table Styling */
+.admin-table thead th {
+    background-color: #f1f4f6;
+    border-top: none;
+    color: #495057;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+}
+
+/* Stats Styling */
+.stat-value {
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+.stat-label {
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+    font-weight: 700;
+}

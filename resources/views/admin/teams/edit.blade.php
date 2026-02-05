@@ -1,24 +1,37 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('content')
-<div class="container-fluid px-4">
-    <div class="d-flex justify-content-between align-items-center mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Edit Team Member</h1>
-        <a href="{{ route('admin.teams.index') }}" class="btn btn-secondary">
-            <i class="bi bi-arrow-left"></i> Back to Team
-        </a>
+<div class="row mb-4">
+    <div class="col-12">
+        <div class="d-flex align-items-center">
+            <a href="{{ route('admin.teams.index') }}" class="btn btn-outline-secondary btn-sm me-3">
+                <i class="bi bi-arrow-left"></i>
+            </a>
+            <div>
+                <h2 class="fw-bold h4 mb-0">Edit Team Member</h2>
+                <p class="text-muted small">Update profile and role information.</p>
+            </div>
+        </div>
     </div>
+</div>
 
-    <div class="card shadow-sm">
-        <div class="card-body">
-            <form action="{{ route('admin.teams.update', $team) }}" method="POST" enctype="multipart/form-data">
-                @csrf
-                @method('PUT')
+<div class="row justify-content-center">
+    <div class="col-md-10">
+        <div class="card admin-card">
+            <div class="card-body p-4">
+                <form action="{{ route('admin.teams.update', $team) }}" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    @method('PUT')
 
-                <div class="row">
-                    <div class="col-md-8">
-                        <div class="mb-3">
-                            <label class="form-label fw-bold">Name <span class="text-danger">*</span></label>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="mb-3">
+                                <label class="form-label fw-bold">Name <span class="text-danger">*</span></label>
+                                <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" value="{{ old('name', $team->name) }}" required>
+                                @error('name')
+                                    <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
+                            </div>
                             <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" value="{{ old('name', $team->name) }}" required>
                             @error('name')
                                 <div class="invalid-feedback">{{ $message }}</div>

@@ -1,14 +1,24 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-6">
-            <div class="card border-0 shadow-sm">
-                <div class="card-header bg-white border-0 py-3 text-center">
-                    <h4 class="mb-0 fw-bold">Edit Category: {{ $category->name }}</h4>
-                </div>
-                <div class="card-body p-4">
+<div class="row mb-4">
+    <div class="col-12">
+        <div class="d-flex align-items-center">
+            <a href="{{ route('admin.categories.index') }}" class="btn btn-outline-secondary btn-sm me-3">
+                <i class="bi bi-arrow-left"></i>
+            </a>
+            <div>
+                <h2 class="fw-bold h4 mb-0">Edit Category</h2>
+                <p class="text-muted small">Modify category details.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card admin-card">
+            <div class="card-body p-4">
                     <form action="{{ route('admin.categories.update', $category) }}" method="POST">
                         @csrf
                         @method('PUT')
@@ -32,7 +42,6 @@
                     </form>
                 </div>
             </div>
-        </div>
     </div>
 </div>
 @endsection

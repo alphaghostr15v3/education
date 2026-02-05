@@ -1,26 +1,25 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('content')
-<div class="container-fluid px-4">
-    <div class="d-flex justify-content-between align-items-center mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Manage Blog Posts</h1>
-        <a href="{{ route('admin.blogs.create') }}" class="btn btn-primary">
-            <i class="bi bi-plus-circle"></i> Create New Blog
-        </a>
-    </div>
-
-    @if(session('success'))
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
-            {{ session('success') }}
-            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+<div class="row mb-4">
+    <div class="col-12">
+        <div class="d-flex justify-content-between align-items-center">
+            <div>
+                <h2 class="fw-bold h4 mb-0">Manage Blog Posts</h2>
+                <p class="text-muted small">Create and publish educational blog content.</p>
+            </div>
+            <a href="{{ route('admin.blogs.create') }}" class="btn btn-primary">
+                <i class="bi bi-plus-lg me-1"></i> New Blog Post
+            </a>
         </div>
-    @endif
+    </div>
+</div>
 
-    <div class="card shadow-sm">
-        <div class="card-body">
-            <div class="table-responsive">
-                <table class="table table-hover align-middle">
-                    <thead class="table-light">
+<div class="card admin-card">
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-hover align-middle admin-table">
+                <thead class="table-light">
                         <tr>
                             <th style="width: 80px;">Image</th>
                             <th>Title</th>

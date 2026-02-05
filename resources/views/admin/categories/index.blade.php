@@ -1,13 +1,19 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('content')
-<div class="container">
-    <div class="d-flex justify-content-between align-items-center mb-4">
-        <h2 class="fw-bold">Categories Management</h2>
-        <a href="{{ route('admin.categories.create') }}" class="btn btn-primary shadow-sm">
-            <i class="bi bi-plus-lg me-1"></i> Add New Category
-        </a>
+<div class="row mb-4">
+    <div class="col-12">
+        <div class="d-flex justify-content-between align-items-center">
+            <div>
+                <h2 class="fw-bold h4 mb-0">Manage Categories</h2>
+                <p class="text-muted small">Organize courses into meaningful genres.</p>
+            </div>
+            <a href="{{ route('admin.categories.create') }}" class="btn btn-primary">
+                <i class="bi bi-plus-lg me-1"></i> Add Category
+            </a>
+        </div>
     </div>
+</div>
 
     @if(session('success'))
         <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -16,10 +22,11 @@
         </div>
     @endif
 
-    <div class="card border-0 shadow-sm">
+<div class="card admin-card">
+    <div class="card-body">
         <div class="table-responsive">
-            <table class="table table-hover align-middle mb-0">
-                <thead class="bg-light">
+            <table class="table table-hover align-middle admin-table">
+                <thead class="table-light">
                     <tr>
                         <th class="px-4 py-3">Icon</th>
                         <th class="py-3">Name</th>

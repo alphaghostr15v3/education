@@ -1,14 +1,24 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('content')
-<div class="container py-5">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card border-0 shadow-sm">
-                <div class="card-header bg-white py-3">
-                    <h5 class="mb-0 fw-bold">Add Story Section</h5>
-                </div>
-                <div class="card-body p-4">
+<div class="row mb-4">
+    <div class="col-12">
+        <div class="d-flex align-items-center">
+            <a href="{{ route('admin.stories.index') }}" class="btn btn-outline-secondary btn-sm me-3">
+                <i class="bi bi-arrow-left"></i>
+            </a>
+            <div>
+                <h2 class="fw-bold h4 mb-0">Add Story Section</h2>
+                <p class="text-muted small">Describe a new chapter of our journey.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card admin-card">
+            <div class="card-body p-4">
                     <form action="{{ route('admin.stories.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         
@@ -52,7 +62,6 @@
                     </form>
                 </div>
             </div>
-        </div>
     </div>
 </div>
 @endsection

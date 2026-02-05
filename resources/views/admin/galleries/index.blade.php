@@ -1,11 +1,19 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('content')
-<div class="container py-5">
-    <div class="d-flex justify-content-between align-items-center mb-4">
-        <h2 class="fw-bold">Manage Gallery</h2>
-        <a href="{{ route('admin.galleries.create') }}" class="btn btn-primary">Add Gallery Item</a>
+<div class="row mb-4">
+    <div class="col-12">
+        <div class="d-flex justify-content-between align-items-center">
+            <div>
+                <h2 class="fw-bold h4 mb-0">Manage Gallery</h2>
+                <p class="text-muted small">Upload and organize campus photos and albums.</p>
+            </div>
+            <a href="{{ route('admin.galleries.create') }}" class="btn btn-primary">
+                <i class="bi bi-plus-lg me-1"></i> Add Gallery Album
+            </a>
+        </div>
     </div>
+</div>
 
     @if(session('success'))
         <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -14,11 +22,11 @@
         </div>
     @endif
 
-    <div class="card border-0 shadow-sm">
-        <div class="card-body">
-            <div class="table-responsive">
-                <table class="table table-hover align-middle">
-                    <thead class="table-light">
+<div class="card admin-card">
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-hover align-middle admin-table">
+                <thead class="table-light">
                         <tr>
                             <th>Image</th>
                             <th>Title</th>
@@ -58,5 +66,4 @@
             </div>
         </div>
     </div>
-</div>
 @endsection

@@ -24,6 +24,8 @@ class NewsletterController extends Controller
     {
         $request->validate([
             'title' => 'required|string|max:255',
+            'thumbnail' => 'nullable|image|max:2048',
+            'description' => 'nullable|string',
             'file' => 'required|mimes:pdf|max:10240', // Max 10MB
             'published_date' => 'required|date',
         ]);
@@ -36,8 +38,18 @@ class NewsletterController extends Controller
             $path = 'uploads/newsletters/' . $filename;
         }
 
+        $thumbnailPath = null;
+        if ($request->hasFile('thumbnail')) {
+            $thumbnail = $request->file('thumbnail');
+            $thumbnailName = time() . '_thumb_' . $thumbnail->getClientOriginalName();
+            $thumbnail->move(public_path('uploads/newsletters/thumbnails'), $thumbnailName);
+            $thumbnailPath = 'uploads/newsletters/thumbnails/' . $thumbnailName;
+        }
+
         Newsletter::create([
             'title' => $request->title,
+            'thumbnail' => $thumbnailPath,
+            'description' => $request->description,
             'file_path' => $path,
             'published_date' => $request->published_date,
             'is_active' => $request->has('is_active'),
@@ -55,12 +67,15 @@ class NewsletterController extends Controller
     {
         $request->validate([
             'title' => 'required|string|max:255',
+            'thumbnail' => 'nullable|image|max:2048',
+            'description' => 'nullable|string',
             'file' => 'nullable|mimes:pdf|max:10240',
             'published_date' => 'required|date',
         ]);
 
         $data = [
             'title' => $request->title,
+            'description' => $request->description,
             'published_date' => $request->published_date,
             'is_active' => $request->has('is_active'),
         ];
@@ -77,6 +92,18 @@ class NewsletterController extends Controller
             $data['file_path'] = 'uploads/newsletters/' . $filename;
         }
 
+        if ($request->hasFile('thumbnail')) {
+            // Delete old thumbnail
+            if ($newsletter->thumbnail && file_exists(public_path($newsletter->thumbnail))) {
+                unlink(public_path($newsletter->thumbnail));
+            }
+
+            $thumbnail = $request->file('thumbnail');
+            $thumbnailName = time() . '_thumb_' . $thumbnail->getClientOriginalName();
+            $thumbnail->move(public_path('uploads/newsletters/thumbnails'), $thumbnailName);
+            $data['thumbnail'] = 'uploads/newsletters/thumbnails/' . $thumbnailName;
+        }
+
         $newsletter->update($data);
 
         return redirect()->route('admin.newsletters.index')->with('success', 'Newsletter updated successfully.');
@@ -87,6 +114,11 @@ class NewsletterController extends Controller
         if ($newsletter->file_path && file_exists(public_path($newsletter->file_path))) {
             unlink(public_path($newsletter->file_path));
         }
+
+        if ($newsletter->thumbnail && file_exists(public_path($newsletter->thumbnail))) {
+            unlink(public_path($newsletter->thumbnail));
+        }
+
         $newsletter->delete();
 
         return redirect()->route('admin.newsletters.index')->with('success', 'Newsletter deleted successfully.');
