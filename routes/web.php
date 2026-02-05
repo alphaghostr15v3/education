@@ -36,6 +36,7 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
     Route::resource('blogs', BlogController::class);
     Route::resource('teams', TeamController::class);
     Route::resource('newsletters', \App\Http\Controllers\Admin\NewsletterController::class);
+    Route::resource('stories', \App\Http\Controllers\Admin\StoryController::class);
 });
 
 // Student/Public Routes

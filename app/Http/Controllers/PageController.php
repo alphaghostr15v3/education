@@ -33,7 +33,11 @@ class PageController extends Controller
 
     public function about() { return view('pages.about'); }
     public function mission() { return view('pages.mission'); }
-    public function story() { return view('pages.story'); }
+    public function story()
+    {
+        $stories = \App\Models\Story::orderBy('order')->get();
+        return view('pages.story', compact('stories'));
+    }
     public function leadership()
     {
         $teams = Team::orderBy('order')->get();
