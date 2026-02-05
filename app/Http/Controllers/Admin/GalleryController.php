@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Gallery;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 use Illuminate\Routing\Controllers\HasMiddleware;
 use Illuminate\Routing\Controllers\Middleware;
 
@@ -91,8 +92,8 @@ class GalleryController extends Controller implements HasMiddleware
         if ($request->hasFile('images')) {
             // Delete old images
             foreach ($gallery->images as $oldImage) {
-                if (file_exists(public_path($oldImage->image_path))) {
-                    @unlink(public_path($oldImage->image_path));
+                if (File::exists(public_path($oldImage->image_path))) {
+                    File::delete(public_path($oldImage->image_path));
                 }
                 $oldImage->delete();
             }
@@ -131,6 +132,14 @@ class GalleryController extends Controller implements HasMiddleware
 
     public function destroy(Gallery $gallery)
     {
+        // Delete all images associated with this gallery
+        foreach ($gallery->images as $image) {
+            if (File::exists(public_path($image->image_path))) {
+                File::delete(public_path($image->image_path));
+            }
+            $image->delete();
+        }
+        
         $gallery->delete();
         return redirect()->route('admin.galleries.index')->with('success', 'Gallery item deleted successfully.');
     }

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\CaseStudy;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\File;
 
 class CaseStudyController extends Controller
 {
@@ -66,8 +67,8 @@ class CaseStudyController extends Controller
         ]);
 
         if ($request->hasFile('image')) {
-            if ($caseStudy->image && file_exists(public_path($caseStudy->image))) {
-                unlink(public_path($caseStudy->image));
+            if ($caseStudy->image && File::exists(public_path($caseStudy->image))) {
+                File::delete(public_path($caseStudy->image));
             }
             $file = $request->file('image');
             $filename = time() . '_' . $file->getClientOriginalName();
@@ -84,8 +85,8 @@ class CaseStudyController extends Controller
 
     public function destroy(CaseStudy $caseStudy)
     {
-        if ($caseStudy->image && file_exists(public_path($caseStudy->image))) {
-            unlink(public_path($caseStudy->image));
+        if ($caseStudy->image && File::exists(public_path($caseStudy->image))) {
+            File::delete(public_path($caseStudy->image));
         }
         $caseStudy->delete();
 

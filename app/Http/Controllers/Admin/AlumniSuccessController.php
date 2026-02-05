@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\AlumniSuccess;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class AlumniSuccessController extends Controller
 {
@@ -59,8 +60,8 @@ class AlumniSuccessController extends Controller
         ]);
 
         if ($request->hasFile('image')) {
-            if ($alumnus->image && file_exists(public_path($alumnus->image))) {
-                unlink(public_path($alumnus->image));
+            if ($alumnus->image && File::exists(public_path($alumnus->image))) {
+                File::delete(public_path($alumnus->image));
             }
             $file = $request->file('image');
             $filename = time() . '_' . $file->getClientOriginalName();
@@ -75,8 +76,8 @@ class AlumniSuccessController extends Controller
 
     public function destroy(AlumniSuccess $alumnus)
     {
-        if ($alumnus->image && file_exists(public_path($alumnus->image))) {
-            unlink(public_path($alumnus->image));
+        if ($alumnus->image && File::exists(public_path($alumnus->image))) {
+            File::delete(public_path($alumnus->image));
         }
         $alumnus->delete();
 

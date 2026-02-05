@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class InstituteController extends Controller
 {
@@ -68,8 +69,8 @@ class InstituteController extends Controller
 
         if ($request->hasFile('thumbnail')) {
             // Optional: Delete old image
-            if ($institute->thumbnail && file_exists(public_path($institute->thumbnail))) {
-                unlink(public_path($institute->thumbnail));
+            if ($institute->thumbnail && File::exists(public_path($institute->thumbnail))) {
+                File::delete(public_path($institute->thumbnail));
             }
             $file = $request->file('thumbnail');
             $filename = time() . '_' . $file->getClientOriginalName();
@@ -85,6 +86,9 @@ class InstituteController extends Controller
     public function destroy(string $id)
     {
         $institute = \App\Models\Institute::findOrFail($id);
+        if ($institute->thumbnail && File::exists(public_path($institute->thumbnail))) {
+            File::delete(public_path($institute->thumbnail));
+        }
         $institute->delete();
         return redirect()->route('admin.institutes.index')->with('success', 'Institute deleted successfully.');
     }

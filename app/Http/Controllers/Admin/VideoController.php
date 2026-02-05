@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Video;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class VideoController extends Controller
 {
@@ -88,8 +89,8 @@ class VideoController extends Controller
 
         if ($request->type === 'upload' && $request->hasFile('video_file')) {
             // Delete old video if exists
-            if ($video->video_url && file_exists(public_path($video->video_url))) {
-                unlink(public_path($video->video_url));
+            if ($video->video_url && File::exists(public_path($video->video_url))) {
+                File::delete(public_path($video->video_url));
             }
             $file = $request->file('video_file');
             $filename = time() . '_' . $file->getClientOriginalName();
@@ -112,6 +113,9 @@ class VideoController extends Controller
     public function destroy(string $id)
     {
         $video = Video::findOrFail($id);
+        if ($video->type === 'upload' && $video->video_url && File::exists(public_path($video->video_url))) {
+            File::delete(public_path($video->video_url));
+        }
         $video->delete();
 
         return redirect()->route('admin.videos.index')

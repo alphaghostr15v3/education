@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class CourseController extends Controller
 {
@@ -65,8 +66,8 @@ class CourseController extends Controller
 
         if ($request->hasFile('thumbnail')) {
             // Delete old thumbnail if exists
-            if ($course->thumbnail && file_exists(public_path($course->thumbnail))) {
-                unlink(public_path($course->thumbnail));
+            if ($course->thumbnail && File::exists(public_path($course->thumbnail))) {
+                File::delete(public_path($course->thumbnail));
             }
             $file = $request->file('thumbnail');
             $filename = time() . '_' . $file->getClientOriginalName();
@@ -81,6 +82,9 @@ class CourseController extends Controller
 
     public function destroy(\App\Models\Course $course)
     {
+        if ($course->thumbnail && File::exists(public_path($course->thumbnail))) {
+            File::delete(public_path($course->thumbnail));
+        }
         $course->delete();
         return redirect()->route('admin.courses.index')->with('success', 'Course deleted successfully!');
     }

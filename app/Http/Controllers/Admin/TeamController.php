@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Team;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class TeamController extends Controller
 {
@@ -62,8 +63,8 @@ class TeamController extends Controller
 
         if ($request->hasFile('photo')) {
             // Delete old photo if exists
-            if ($team->photo && file_exists(public_path($team->photo))) {
-                unlink(public_path($team->photo));
+            if ($team->photo && File::exists(public_path($team->photo))) {
+                File::delete(public_path($team->photo));
             }
             $file = $request->file('photo');
             $filename = time() . '_' . $file->getClientOriginalName();
@@ -79,8 +80,8 @@ class TeamController extends Controller
     public function destroy(Team $team)
     {
         // Delete photo if exists
-        if ($team->photo && file_exists(public_path($team->photo))) {
-            unlink(public_path($team->photo));
+        if ($team->photo && File::exists(public_path($team->photo))) {
+            File::delete(public_path($team->photo));
         }
 
         $team->delete();

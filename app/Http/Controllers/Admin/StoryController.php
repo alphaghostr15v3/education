@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Story;
-use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 
 class StoryController extends Controller
 {
@@ -68,8 +68,8 @@ class StoryController extends Controller
         ];
 
         if ($request->hasFile('image')) {
-            if ($story->image_path && file_exists(public_path($story->image_path))) {
-                unlink(public_path($story->image_path));
+            if ($story->image_path && File::exists(public_path($story->image_path))) {
+                File::delete(public_path($story->image_path));
             }
 
             $file = $request->file('image');
@@ -85,8 +85,8 @@ class StoryController extends Controller
 
     public function destroy(Story $story)
     {
-        if ($story->image_path && file_exists(public_path($story->image_path))) {
-            unlink(public_path($story->image_path));
+        if ($story->image_path && File::exists(public_path($story->image_path))) {
+            File::delete(public_path($story->image_path));
         }
         $story->delete();
 

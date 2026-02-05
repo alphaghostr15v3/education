@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Event;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\File;
 use Illuminate\Routing\Controllers\HasMiddleware;
 use Illuminate\Routing\Controllers\Middleware;
 
@@ -74,8 +75,8 @@ class EventController extends Controller implements HasMiddleware
 
         if ($request->hasFile('image')) {
             // Delete old image if exists
-            if ($event->image_path && file_exists(public_path($event->image_path))) {
-                @unlink(public_path($event->image_path));
+            if ($event->image_path && File::exists(public_path($event->image_path))) {
+                File::delete(public_path($event->image_path));
             }
 
             $imageName = time().'.'.$request->image->extension();
@@ -90,6 +91,9 @@ class EventController extends Controller implements HasMiddleware
 
     public function destroy(Event $event)
     {
+        if ($event->image_path && File::exists(public_path($event->image_path))) {
+            File::delete(public_path($event->image_path));
+        }
         $event->delete();
         return redirect()->route('admin.events.index')->with('success', 'Event deleted successfully.');
     }

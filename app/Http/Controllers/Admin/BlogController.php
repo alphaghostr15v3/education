@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Blog;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class BlogController extends Controller
 {
@@ -72,8 +73,8 @@ class BlogController extends Controller
 
         if ($request->hasFile('featured_image')) {
             // Delete old image if exists
-            if ($blog->featured_image && file_exists(public_path($blog->featured_image))) {
-                unlink(public_path($blog->featured_image));
+            if ($blog->featured_image && File::exists(public_path($blog->featured_image))) {
+                File::delete(public_path($blog->featured_image));
             }
             $file = $request->file('featured_image');
             $filename = time() . '_' . $file->getClientOriginalName();
@@ -89,8 +90,8 @@ class BlogController extends Controller
     public function destroy(Blog $blog)
     {
         // Delete featured image if exists
-        if ($blog->featured_image && file_exists(public_path($blog->featured_image))) {
-            unlink(public_path($blog->featured_image));
+        if ($blog->featured_image && File::exists(public_path($blog->featured_image))) {
+            File::delete(public_path($blog->featured_image));
         }
 
         $blog->delete();

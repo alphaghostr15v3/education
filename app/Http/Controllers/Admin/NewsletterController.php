@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Newsletter;
-use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 
 class NewsletterController extends Controller
 {
@@ -82,8 +82,8 @@ class NewsletterController extends Controller
 
         if ($request->hasFile('file')) {
             // Delete old file
-            if ($newsletter->file_path && file_exists(public_path($newsletter->file_path))) {
-                unlink(public_path($newsletter->file_path));
+            if ($newsletter->file_path && File::exists(public_path($newsletter->file_path))) {
+                File::delete(public_path($newsletter->file_path));
             }
 
             $file = $request->file('file');
@@ -94,8 +94,8 @@ class NewsletterController extends Controller
 
         if ($request->hasFile('thumbnail')) {
             // Delete old thumbnail
-            if ($newsletter->thumbnail && file_exists(public_path($newsletter->thumbnail))) {
-                unlink(public_path($newsletter->thumbnail));
+            if ($newsletter->thumbnail && File::exists(public_path($newsletter->thumbnail))) {
+                File::delete(public_path($newsletter->thumbnail));
             }
 
             $thumbnail = $request->file('thumbnail');
@@ -111,12 +111,12 @@ class NewsletterController extends Controller
 
     public function destroy(Newsletter $newsletter)
     {
-        if ($newsletter->file_path && file_exists(public_path($newsletter->file_path))) {
-            unlink(public_path($newsletter->file_path));
+        if ($newsletter->file_path && File::exists(public_path($newsletter->file_path))) {
+            File::delete(public_path($newsletter->file_path));
         }
 
-        if ($newsletter->thumbnail && file_exists(public_path($newsletter->thumbnail))) {
-            unlink(public_path($newsletter->thumbnail));
+        if ($newsletter->thumbnail && File::exists(public_path($newsletter->thumbnail))) {
+            File::delete(public_path($newsletter->thumbnail));
         }
 
         $newsletter->delete();
