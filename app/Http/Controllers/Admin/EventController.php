@@ -45,8 +45,12 @@ class EventController extends Controller implements HasMiddleware
         $data['slug'] = Str::slug($request->title);
 
         if ($request->hasFile('image')) {
+            $uploadPath = public_path('storage/events');
+            if (!File::isDirectory($uploadPath)) {
+                File::makeDirectory($uploadPath, 0775, true, true);
+            }
             $imageName = time().'.'.$request->image->extension();
-            $request->image->move(public_path('storage/events'), $imageName);
+            $request->image->move($uploadPath, $imageName);
             $data['image_path'] = '/storage/events/' . $imageName;
         }
 
@@ -74,13 +78,16 @@ class EventController extends Controller implements HasMiddleware
         $data['slug'] = Str::slug($request->title);
 
         if ($request->hasFile('image')) {
+            $uploadPath = public_path('storage/events');
+            if (!File::isDirectory($uploadPath)) {
+                File::makeDirectory($uploadPath, 0775, true, true);
+            }
             // Delete old image if exists
             if ($event->image_path && File::exists(public_path($event->image_path))) {
                 File::delete(public_path($event->image_path));
             }
-
             $imageName = time().'.'.$request->image->extension();
-            $request->image->move(public_path('storage/events'), $imageName);
+            $request->image->move($uploadPath, $imageName);
             $data['image_path'] = '/storage/events/' . $imageName;
         }
 

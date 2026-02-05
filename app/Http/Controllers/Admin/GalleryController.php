@@ -44,10 +44,15 @@ class GalleryController extends Controller implements HasMiddleware
         if ($request->hasFile('images')) {
             $files = $request->file('images');
             
+            $uploadPath = public_path('uploads/gallery');
+            if (!File::isDirectory($uploadPath)) {
+                File::makeDirectory($uploadPath, 0775, true, true);
+            }
+            
             // First image as primary
             $primaryImage = $files[0];
             $primaryName = time().'_0.'.$primaryImage->extension();
-            $primaryImage->move(public_path('uploads/gallery'), $primaryName);
+            $primaryImage->move($uploadPath, $primaryName);
             $data['image_path'] = 'uploads/gallery/' . $primaryName;
             
             $gallery = Gallery::create($data);
@@ -58,7 +63,7 @@ class GalleryController extends Controller implements HasMiddleware
                     $imagePath = $data['image_path'];
                 } else {
                     $imageName = time().'_'.$index.'.'.$file->extension();
-                    $file->move(public_path('uploads/gallery'), $imageName);
+                    $file->move($uploadPath, $imageName);
                     $imagePath = 'uploads/gallery/' . $imageName;
                 }
                 
@@ -90,6 +95,11 @@ class GalleryController extends Controller implements HasMiddleware
         $data = $request->only(['title', 'category']);
 
         if ($request->hasFile('images')) {
+            $uploadPath = public_path('uploads/gallery');
+            if (!File::isDirectory($uploadPath)) {
+                File::makeDirectory($uploadPath, 0775, true, true);
+            }
+
             // Delete old images
             foreach ($gallery->images as $oldImage) {
                 if (File::exists(public_path($oldImage->image_path))) {
@@ -103,7 +113,7 @@ class GalleryController extends Controller implements HasMiddleware
             // First image as primary
             $primaryImage = $files[0];
             $primaryName = time().'_0.'.$primaryImage->extension();
-            $primaryImage->move(public_path('uploads/gallery'), $primaryName);
+            $primaryImage->move($uploadPath, $primaryName);
             $data['image_path'] = 'uploads/gallery/' . $primaryName;
             
             $gallery->update($data);
@@ -114,7 +124,7 @@ class GalleryController extends Controller implements HasMiddleware
                     $imagePath = $data['image_path'];
                 } else {
                     $imageName = time().'_'.$index.'.'.$file->extension();
-                    $file->move(public_path('uploads/gallery'), $imageName);
+                    $file->move($uploadPath, $imageName);
                     $imagePath = 'uploads/gallery/' . $imageName;
                 }
                 

@@ -33,9 +33,13 @@ class InstituteController extends Controller
         ]);
 
         if ($request->hasFile('thumbnail')) {
+            $uploadPath = public_path('uploads/institutes');
+            if (!File::isDirectory($uploadPath)) {
+                File::makeDirectory($uploadPath, 0775, true, true);
+            }
             $file = $request->file('thumbnail');
             $filename = time() . '_' . $file->getClientOriginalName();
-            $file->move(public_path('uploads/institutes'), $filename);
+            $file->move($uploadPath, $filename);
             $validated['thumbnail'] = 'uploads/institutes/' . $filename;
         }
 
@@ -68,13 +72,17 @@ class InstituteController extends Controller
         $institute = \App\Models\Institute::findOrFail($id);
 
         if ($request->hasFile('thumbnail')) {
+            $uploadPath = public_path('uploads/institutes');
+            if (!File::isDirectory($uploadPath)) {
+                File::makeDirectory($uploadPath, 0775, true, true);
+            }
             // Optional: Delete old image
             if ($institute->thumbnail && File::exists(public_path($institute->thumbnail))) {
                 File::delete(public_path($institute->thumbnail));
             }
             $file = $request->file('thumbnail');
             $filename = time() . '_' . $file->getClientOriginalName();
-            $file->move(public_path('uploads/institutes'), $filename);
+            $file->move($uploadPath, $filename);
             $validated['thumbnail'] = 'uploads/institutes/' . $filename;
         }
 

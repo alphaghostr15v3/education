@@ -35,9 +35,13 @@ class CourseController extends Controller
         $validated['status'] = 'published';
 
         if ($request->hasFile('thumbnail')) {
+            $uploadPath = public_path('uploads/courses');
+            if (!File::isDirectory($uploadPath)) {
+                File::makeDirectory($uploadPath, 0775, true, true);
+            }
             $file = $request->file('thumbnail');
             $filename = time() . '_' . $file->getClientOriginalName();
-            $file->move(public_path('uploads/courses'), $filename);
+            $file->move($uploadPath, $filename);
             $validated['thumbnail'] = 'uploads/courses/' . $filename;
         }
 
@@ -65,13 +69,17 @@ class CourseController extends Controller
         $validated['slug'] = \Illuminate\Support\Str::slug($validated['title']);
 
         if ($request->hasFile('thumbnail')) {
+            $uploadPath = public_path('uploads/courses');
+            if (!File::isDirectory($uploadPath)) {
+                File::makeDirectory($uploadPath, 0775, true, true);
+            }
             // Delete old thumbnail if exists
             if ($course->thumbnail && File::exists(public_path($course->thumbnail))) {
                 File::delete(public_path($course->thumbnail));
             }
             $file = $request->file('thumbnail');
             $filename = time() . '_' . $file->getClientOriginalName();
-            $file->move(public_path('uploads/courses'), $filename);
+            $file->move($uploadPath, $filename);
             $validated['thumbnail'] = 'uploads/courses/' . $filename;
         }
         

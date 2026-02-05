@@ -32,9 +32,13 @@ class AlumniSuccessController extends Controller
         ]);
 
         if ($request->hasFile('image')) {
+            $uploadPath = public_path('uploads/alumni');
+            if (!File::isDirectory($uploadPath)) {
+                File::makeDirectory($uploadPath, 0775, true, true);
+            }
             $file = $request->file('image');
             $filename = time() . '_' . $file->getClientOriginalName();
-            $file->move(public_path('uploads/alumni'), $filename);
+            $file->move($uploadPath, $filename);
             $validated['image'] = 'uploads/alumni/' . $filename;
         }
 
@@ -60,12 +64,16 @@ class AlumniSuccessController extends Controller
         ]);
 
         if ($request->hasFile('image')) {
+            $uploadPath = public_path('uploads/alumni');
+            if (!File::isDirectory($uploadPath)) {
+                File::makeDirectory($uploadPath, 0775, true, true);
+            }
             if ($alumnus->image && File::exists(public_path($alumnus->image))) {
                 File::delete(public_path($alumnus->image));
             }
             $file = $request->file('image');
             $filename = time() . '_' . $file->getClientOriginalName();
-            $file->move(public_path('uploads/alumni'), $filename);
+            $file->move($uploadPath, $filename);
             $validated['image'] = 'uploads/alumni/' . $filename;
         }
 

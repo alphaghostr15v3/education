@@ -31,9 +31,13 @@ class StoryController extends Controller
 
         $path = null;
         if ($request->hasFile('image')) {
+            $uploadPath = public_path('uploads/stories');
+            if (!File::isDirectory($uploadPath)) {
+                File::makeDirectory($uploadPath, 0775, true, true);
+            }
             $file = $request->file('image');
             $filename = time() . '_' . $file->getClientOriginalName();
-            $file->move(public_path('uploads/stories'), $filename);
+            $file->move($uploadPath, $filename);
             $path = 'uploads/stories/' . $filename;
         }
 
@@ -68,13 +72,17 @@ class StoryController extends Controller
         ];
 
         if ($request->hasFile('image')) {
+            $uploadPath = public_path('uploads/stories');
+            if (!File::isDirectory($uploadPath)) {
+                File::makeDirectory($uploadPath, 0775, true, true);
+            }
             if ($story->image_path && File::exists(public_path($story->image_path))) {
                 File::delete(public_path($story->image_path));
             }
 
             $file = $request->file('image');
             $filename = time() . '_' . $file->getClientOriginalName();
-            $file->move(public_path('uploads/stories'), $filename);
+            $file->move($uploadPath, $filename);
             $data['image_path'] = 'uploads/stories/' . $filename;
         }
 

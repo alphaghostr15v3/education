@@ -39,9 +39,13 @@ class BlogController extends Controller
         }
 
         if ($request->hasFile('featured_image')) {
+            $uploadPath = public_path('uploads/blogs');
+            if (!File::isDirectory($uploadPath)) {
+                File::makeDirectory($uploadPath, 0775, true, true);
+            }
             $file = $request->file('featured_image');
             $filename = time() . '_' . $file->getClientOriginalName();
-            $file->move(public_path('uploads/blogs'), $filename);
+            $file->move($uploadPath, $filename);
             $validated['featured_image'] = 'uploads/blogs/' . $filename;
         }
 
@@ -72,13 +76,17 @@ class BlogController extends Controller
         }
 
         if ($request->hasFile('featured_image')) {
+            $uploadPath = public_path('uploads/blogs');
+            if (!File::isDirectory($uploadPath)) {
+                File::makeDirectory($uploadPath, 0775, true, true);
+            }
             // Delete old image if exists
             if ($blog->featured_image && File::exists(public_path($blog->featured_image))) {
                 File::delete(public_path($blog->featured_image));
             }
             $file = $request->file('featured_image');
             $filename = time() . '_' . $file->getClientOriginalName();
-            $file->move(public_path('uploads/blogs'), $filename);
+            $file->move($uploadPath, $filename);
             $validated['featured_image'] = 'uploads/blogs/' . $filename;
         }
 

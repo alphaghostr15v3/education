@@ -32,9 +32,13 @@ class NewsletterController extends Controller
 
         $path = '';
         if ($request->hasFile('file')) {
+            $uploadPath = public_path('uploads/newsletters');
+            if (!File::isDirectory($uploadPath)) {
+                File::makeDirectory($uploadPath, 0775, true, true);
+            }
             $file = $request->file('file');
             $filename = time() . '_' . $file->getClientOriginalName();
-            $file->move(public_path('uploads/newsletters'), $filename);
+            $file->move($uploadPath, $filename);
             $path = 'uploads/newsletters/' . $filename;
         }
 
@@ -81,6 +85,10 @@ class NewsletterController extends Controller
         ];
 
         if ($request->hasFile('file')) {
+            $uploadPath = public_path('uploads/newsletters');
+            if (!File::isDirectory($uploadPath)) {
+                File::makeDirectory($uploadPath, 0775, true, true);
+            }
             // Delete old file
             if ($newsletter->file_path && File::exists(public_path($newsletter->file_path))) {
                 File::delete(public_path($newsletter->file_path));
@@ -88,11 +96,15 @@ class NewsletterController extends Controller
 
             $file = $request->file('file');
             $filename = time() . '_' . $file->getClientOriginalName();
-            $file->move(public_path('uploads/newsletters'), $filename);
+            $file->move($uploadPath, $filename);
             $data['file_path'] = 'uploads/newsletters/' . $filename;
         }
 
         if ($request->hasFile('thumbnail')) {
+            $uploadPath = public_path('uploads/newsletters/thumbnails');
+            if (!File::isDirectory($uploadPath)) {
+                File::makeDirectory($uploadPath, 0775, true, true);
+            }
             // Delete old thumbnail
             if ($newsletter->thumbnail && File::exists(public_path($newsletter->thumbnail))) {
                 File::delete(public_path($newsletter->thumbnail));
@@ -100,7 +112,7 @@ class NewsletterController extends Controller
 
             $thumbnail = $request->file('thumbnail');
             $thumbnailName = time() . '_thumb_' . $thumbnail->getClientOriginalName();
-            $thumbnail->move(public_path('uploads/newsletters/thumbnails'), $thumbnailName);
+            $thumbnail->move($uploadPath, $thumbnailName);
             $data['thumbnail'] = 'uploads/newsletters/thumbnails/' . $thumbnailName;
         }
 

@@ -33,9 +33,13 @@ class TeamController extends Controller
         $validated['order'] = $validated['order'] ?? 0;
 
         if ($request->hasFile('photo')) {
+            $uploadPath = public_path('uploads/team');
+            if (!File::isDirectory($uploadPath)) {
+                File::makeDirectory($uploadPath, 0775, true, true);
+            }
             $file = $request->file('photo');
             $filename = time() . '_' . $file->getClientOriginalName();
-            $file->move(public_path('uploads/team'), $filename);
+            $file->move($uploadPath, $filename);
             $validated['photo'] = 'uploads/team/' . $filename;
         }
 
@@ -62,13 +66,17 @@ class TeamController extends Controller
         $validated['order'] = $validated['order'] ?? 0;
 
         if ($request->hasFile('photo')) {
+            $uploadPath = public_path('uploads/team');
+            if (!File::isDirectory($uploadPath)) {
+                File::makeDirectory($uploadPath, 0775, true, true);
+            }
             // Delete old photo if exists
             if ($team->photo && File::exists(public_path($team->photo))) {
                 File::delete(public_path($team->photo));
             }
             $file = $request->file('photo');
             $filename = time() . '_' . $file->getClientOriginalName();
-            $file->move(public_path('uploads/team'), $filename);
+            $file->move($uploadPath, $filename);
             $validated['photo'] = 'uploads/team/' . $filename;
         }
 
