@@ -22,19 +22,19 @@
 
     <div class="row g-4">
         @forelse($teams as $member)
-            <div class="col-md-4">
-                <div class="card border-0 shadow-sm text-center p-4">
+            <div class="col-lg-6">
+                <div class="card border-0 shadow-sm text-center p-lg-5 p-4">
                     @if($member->photo)
-                        <img src="{{ asset($member->photo) }}" class="rounded-circle mx-auto mb-4" width="120" height="120" style="object-fit: cover;">
+                        <img src="{{ asset($member->photo) }}" class="rounded-circle mx-auto mb-4" width="200" height="200" style="object-fit: cover;">
                     @else
-                        <div class="rounded-circle mx-auto mb-4 bg-secondary d-flex align-items-center justify-content-center" style="width: 120px; height: 120px;">
-                            <i class="bi bi-person text-white display-5"></i>
+                        <div class="rounded-circle mx-auto mb-4 bg-secondary d-flex align-items-center justify-content-center" style="width: 200px; height: 200px;">
+                            <i class="bi bi-person text-white display-4"></i>
                         </div>
                     @endif
-                    <h5 class="fw-bold mb-1">{{ $member->name }}</h5>
-                    <p class="text-primary small mb-3">{{ $member->position }}</p>
+                    <h3 class="fw-bold mb-1">{{ $member->name }}</h3>
+                    <p class="text-primary fs-5 mb-3">{{ $member->position }}</p>
                     @if($member->bio)
-                        <p class="small text-muted">{{ $member->bio }}</p>
+                        <p class="text-muted fs-5">{{ $member->bio }}</p>
                     @endif
                 </div>
             </div>

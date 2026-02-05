@@ -9,17 +9,17 @@
 
     <div class="row g-4">
         @forelse($galleries as $gallery)
-            <div class="col-md-4 col-lg-3">
+            <div class="col-md-6 col-lg-4">
                 <div class="card border-0 shadow-sm h-100 overflow-hidden hover-lift position-relative">
                     @if($gallery->images->count() > 1)
                         <span class="position-absolute top-0 end-0 m-2 badge rounded-pill bg-primary shadow-sm" style="z-index: 5;">
                             {{ $gallery->images->count() }} <i class="bi bi-images ms-1"></i>
                         </span>
                     @endif
-                    <img src="{{ asset($gallery->image_path) }}" class="card-img-top" alt="{{ $gallery->title }}" style="height: 200px; object-fit: cover;">
-                    <div class="card-body p-3 text-center">
-                        <h6 class="fw-bold mb-1">{{ $gallery->title }}</h6>
-                        <small class="text-primary">{{ $gallery->category }}</small>
+                    <img src="{{ asset($gallery->image_path) }}" class="card-img-top" alt="{{ $gallery->title }}" style="height: 350px; object-fit: cover;">
+                    <div class="card-body p-4 text-center">
+                        <h5 class="fw-bold mb-2">{{ $gallery->title }}</h5>
+                        <p class="text-primary fw-bold mb-0">{{ $gallery->category }}</p>
                     </div>
                 </div>
             </div>

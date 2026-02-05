@@ -9,7 +9,7 @@
 
     <div class="row g-4">
         @forelse($videos as $video)
-            <div class="col-md-6 col-lg-4">
+            <div class="col-lg-6">
                 <div class="card border-0 shadow-sm h-100">
                     <div class="ratio ratio-16x9">
                         @if($video->type == 'upload')
@@ -21,10 +21,10 @@
                             <iframe src="{{ $video->embed_url }}" title="{{ $video->title }}" allowfullscreen></iframe>
                         @endif
                     </div>
-                    <div class="card-body">
-                        <h5 class="fw-bold mb-2">{{ $video->title }}</h5>
+                    <div class="card-body p-lg-5 p-4">
+                        <h3 class="fw-bold mb-3">{{ $video->title }}</h3>
                         @if($video->description)
-                            <p class="text-muted small mb-0">{{ Str::limit($video->description, 100) }}</p>
+                            <p class="text-muted fs-5 mb-0">{{ $video->description }}</p>
                         @endif
                     </div>
                 </div>
