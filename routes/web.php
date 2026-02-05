@@ -41,6 +41,8 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
     Route::resource('newsletters', \App\Http\Controllers\Admin\NewsletterController::class);
     Route::resource('stories', \App\Http\Controllers\Admin\StoryController::class);
     Route::resource('contacts', \App\Http\Controllers\Admin\ContactController::class)->only(['index', 'show', 'destroy']);
+    Route::resource('case-studies', \App\Http\Controllers\Admin\CaseStudyController::class);
+    Route::resource('alumni', \App\Http\Controllers\Admin\AlumniSuccessController::class);
 });
 
 // Student/Public Routes
@@ -58,6 +60,9 @@ Route::get('/institutes-programs', [App\Http\Controllers\PageController::class, 
 Route::get('/our-institutions', [App\Http\Controllers\PageController::class, 'institutions'])->name('institutions');
 Route::get('/courses-curriculum', [App\Http\Controllers\PageController::class, 'curriculum'])->name('curriculum');
 Route::get('/events', [App\Http\Controllers\PageController::class, 'events'])->name('events');
+Route::get('/case-studies', [App\Http\Controllers\PageController::class, 'caseStudies'])->name('case-studies.index');
+Route::get('/case-studies/{slug}', [App\Http\Controllers\PageController::class, 'caseStudyDetail'])->name('case-studies.show');
+Route::get('/alumni-success', [App\Http\Controllers\PageController::class, 'alumniSuccess'])->name('alumni.success');
 Route::get('/gallery', [App\Http\Controllers\PageController::class, 'gallery'])->name('gallery');
 Route::get('/media/videos', [\App\Http\Controllers\VideoController::class, 'index'])->name('videos.index');
 Route::get('/blog', [App\Http\Controllers\PageController::class, 'blog'])->name('blog');

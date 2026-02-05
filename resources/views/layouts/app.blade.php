@@ -71,6 +71,16 @@
                         </li>
 
                         <li class="nav-item dropdown">
+                            <a class="nav-link fw-bold dropdown-toggle {{ request()->routeIs('case-studies.*') || request()->routeIs('alumni.*') ? 'active text-primary' : 'text-dark' }}" href="#" id="impactDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Impact
+                            </a>
+                            <ul class="dropdown-menu border-0 shadow-sm" aria-labelledby="impactDropdown">
+                                <li><a class="dropdown-item" href="{{ route('case-studies.index') }}">Case Studies</a></li>
+                                <li><a class="dropdown-item" href="{{ route('alumni.success') }}">Alumni Success</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
                             <a class="nav-link fw-bold dropdown-toggle {{ request()->routeIs('blog') || request()->routeIs('faq') || request()->routeIs('pricing') || request()->routeIs('team') ? 'active text-primary' : 'text-dark' }}" href="#" id="resourcesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Resources
                             </a>
@@ -187,6 +197,12 @@
         footer .text-muted { color: #b0b0b0 !important; }
     </style>
     <div class="floating-contact-buttons">
+        <a href="https://facebook.com" target="_blank" class="floating-btn btn-facebook" title="Follow us on Facebook">
+            <i class="bi bi-facebook"></i>
+        </a>
+        <a href="https://twitter.com" target="_blank" class="floating-btn btn-twitter" title="Follow us on X (Twitter)">
+            <i class="bi bi-twitter-x"></i>
+        </a>
         <a href="https://wa.me/911234567890" target="_blank" class="floating-btn btn-whatsapp" title="Chat on WhatsApp">
             <i class="bi bi-whatsapp"></i>
         </a>

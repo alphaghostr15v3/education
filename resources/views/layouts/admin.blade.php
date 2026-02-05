@@ -71,6 +71,12 @@
                 <li class="{{ request()->routeIs('admin.contacts.*') ? 'active' : '' }}">
                     <a href="{{ route('admin.contacts.index') }}"><i class="bi bi-chat-left-text"></i> Messages</a>
                 </li>
+                <li class="{{ request()->routeIs('admin.case-studies.*') ? 'active' : '' }}">
+                    <a href="{{ route('admin.case-studies.index') }}"><i class="bi bi-briefcase"></i> Case Studies</a>
+                </li>
+                <li class="{{ request()->routeIs('admin.alumni.*') ? 'active' : '' }}">
+                    <a href="{{ route('admin.alumni.index') }}"><i class="bi bi-mortarboard"></i> Alumni Success</a>
+                </li>
                 <li class="{{ request()->routeIs('admin.users.*') ? 'active' : '' }}">
                     <a href="{{ route('admin.users.index') }}"><i class="bi bi-person-gear"></i> Users</a>
                 </li>

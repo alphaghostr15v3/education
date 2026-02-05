@@ -93,4 +93,22 @@ class PageController extends Controller
                                            ->get();
         return view('pages.newsletters', compact('newsletters'));
     }
+
+    public function caseStudies()
+    {
+        $caseStudies = \App\Models\CaseStudy::published()->latest()->paginate(9);
+        return view('pages.case-studies.index', compact('caseStudies'));
+    }
+
+    public function caseStudyDetail($slug)
+    {
+        $caseStudy = \App\Models\CaseStudy::where('slug', $slug)->published()->firstOrFail();
+        return view('pages.case-studies.show', compact('caseStudy'));
+    }
+
+    public function alumniSuccess()
+    {
+        $alumni = \App\Models\AlumniSuccess::published()->latest()->get();
+        return view('pages.alumni-success', compact('alumni'));
+    }
 }
