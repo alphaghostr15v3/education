@@ -25,9 +25,26 @@ class LoginController extends Controller implements HasMiddleware
     /**
      * Where to redirect users after login.
      *
-     * @var string
+     * @return string
      */
-    protected $redirectTo = '/home';
+    public function redirectTo()
+    {
+        if (auth()->user()->role === 'admin') {
+            return route('admin.dashboard');
+        }
+
+        return '/home';
+    }
+
+    /**
+     * Show the admin login form.
+     *
+     * @return \Illuminate\View\View
+     */
+    public function showAdminLoginForm()
+    {
+        return view('admin.auth.login');
+    }
 
     /**
      * Get the middleware that should be assigned to the controller.
