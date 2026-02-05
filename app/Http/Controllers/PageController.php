@@ -7,6 +7,7 @@ use App\Models\Event;
 use App\Models\HeroSlide;
 use App\Models\Blog;
 use App\Models\Team;
+use App\Models\Contact;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -63,6 +64,20 @@ class PageController extends Controller
         return view('pages.blog-detail', compact('blog'));
     }
     public function contact() { return view('pages.contact'); }
+
+    public function contactSubmit(Request $request)
+    {
+        $validated = $request->validate([
+            'first_name' => 'required|string|max:255',
+            'last_name' => 'required|string|max:255',
+            'email' => 'required|email|max:255',
+            'message' => 'required|string',
+        ]);
+
+        Contact::create($validated);
+
+        return redirect()->back()->with('success', 'Thank you for your message. We have received it and will get back to you soon!');
+    }
     public function faq() { return view('pages.faq'); }
     public function team()
     {

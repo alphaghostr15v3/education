@@ -40,6 +40,7 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
     Route::resource('teams', TeamController::class);
     Route::resource('newsletters', \App\Http\Controllers\Admin\NewsletterController::class);
     Route::resource('stories', \App\Http\Controllers\Admin\StoryController::class);
+    Route::resource('contacts', \App\Http\Controllers\Admin\ContactController::class)->only(['index', 'show', 'destroy']);
 });
 
 // Student/Public Routes
@@ -62,6 +63,7 @@ Route::get('/media/videos', [\App\Http\Controllers\VideoController::class, 'inde
 Route::get('/blog', [App\Http\Controllers\PageController::class, 'blog'])->name('blog');
 Route::get('/blog/{slug}', [App\Http\Controllers\PageController::class, 'blogDetail'])->name('blog.detail');
 Route::get('/contact', [App\Http\Controllers\PageController::class, 'contact'])->name('contact');
+Route::post('/contact', [App\Http\Controllers\PageController::class, 'contactSubmit'])->name('contact.submit');
 
 // Sub Pages
 Route::get('/faq', [App\Http\Controllers\PageController::class, 'faq'])->name('faq');

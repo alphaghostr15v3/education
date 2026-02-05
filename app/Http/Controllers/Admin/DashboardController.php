@@ -16,6 +16,7 @@ class DashboardController extends Controller
             'categories' => \App\Models\Category::count(),
             'galleries' => \App\Models\Gallery::count(),
             'events' => \App\Models\Event::count(),
+            'contacts' => \App\Models\Contact::count(),
         ];
 
         return view('admin.dashboard', compact('stats'));

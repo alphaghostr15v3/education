@@ -58,6 +58,13 @@
                     <div class="text-muted text-uppercase small font-weight-bold">Categories</div>
                 </div>
             </div>
+        <div class="col-md-2">
+            <div class="card border-0 shadow-sm h-100">
+                <div class="card-body text-center">
+                    <div class="display-6 fw-bold text-danger mb-2">{{ $stats['contacts'] }}</div>
+                    <div class="text-muted text-uppercase small font-weight-bold">Messages</div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -173,6 +180,14 @@
                                 <div>
                                     <h6 class="mb-1 fw-bold">Manage "Our Story"</h6>
                                     <p class="mb-1 text-muted small">Update the story timeline and sections.</p>
+                                </div>
+                                <i class="bi bi-chevron-right"></i>
+                            </div>
+                        <a href="{{ route('admin.contacts.index') }}" class="list-group-item list-group-item-action border-0 px-0 text-danger">
+                            <div class="d-flex w-100 justify-content-between align-items-center">
+                                <div>
+                                    <h6 class="mb-1 fw-bold">Manage Contact Messages</h6>
+                                    <p class="mb-1 text-muted small">View and manage inquiries from the contact form.</p>
                                 </div>
                                 <i class="bi bi-chevron-right"></i>
                             </div>
