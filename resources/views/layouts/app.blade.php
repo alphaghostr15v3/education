@@ -56,17 +56,14 @@
                             <a class="nav-link fw-bold {{ request()->routeIs('courses.*') ? 'active text-primary' : 'text-dark' }}" href="{{ route('courses.index') }}">Courses</a>
                         </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link fw-bold {{ request()->routeIs('events') ? 'active text-primary' : 'text-dark' }}" href="{{ route('events') }}">Events</a>
-                        </li>
-
                         <li class="nav-item dropdown">
-                            <a class="nav-link fw-bold dropdown-toggle {{ request()->routeIs('gallery') || request()->routeIs('videos.*') ? 'active text-primary' : 'text-dark' }}" href="#" id="mediaDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link fw-bold dropdown-toggle {{ request()->routeIs('gallery') || request()->routeIs('videos.*') || request()->routeIs('events') ? 'active text-primary' : 'text-dark' }}" href="#" id="mediaDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Media
                             </a>
                             <ul class="dropdown-menu border-0 shadow-sm" aria-labelledby="mediaDropdown">
                                 <li><a class="dropdown-item" href="{{ route('gallery') }}">Gallery</a></li>
                                 <li><a class="dropdown-item" href="{{ route('videos.index') }}">Video</a></li>
+                                <li><a class="dropdown-item" href="{{ route('events') }}">Events</a></li>
                             </ul>
                         </li>
 
