@@ -213,23 +213,23 @@ body {
     right: 0;
     bottom: 0;
     left: 0;
-    clip-path: ellipse(90% 100% at 100% 50%);
+    clip-path: ellipse(95% 100% at 100% 50%);
     overflow: hidden;
 }
 
 /* Laptop and larger screens */
 @media (min-width: 1200px) {
     .hero-slider {
-        left: -30px;
-        clip-path: ellipse(92% 100% at 100% 50%);
+        left: -20px;
+        clip-path: ellipse(96% 100% at 100% 50%);
     }
 }
 
 /* Extra large screens */
 @media (min-width: 1400px) {
     .hero-slider {
-        left: -60px;
-        clip-path: ellipse(94% 100% at 100% 50%);
+        left: -40px;
+        clip-path: ellipse(97% 100% at 100% 50%);
     }
 }
 
