@@ -6,7 +6,7 @@
         <div class="row g-0 align-items-stretch">
             <div class="col-lg-6">
                 <div class="hero-modern-content ps-lg-5 ms-lg-5 pe-lg-4">
-                    <h1 class="hero-modern-title">Yadupati Singhania Vocational Education Foundation (YPSVEF)</h1>
+                    <h1 class="hero-modern-title">Yadupati Singhania <br> Vocational Education <br> Foundation (YPSVEF)</h1>
                     <p class="hero-modern-description">
                         Building future-ready vocational skills that lead to real jobs, sustainable livelihoods, and industry relevance across India.
                     </p>
