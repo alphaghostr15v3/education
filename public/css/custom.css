@@ -155,8 +155,8 @@ body {
     /* Deep Indian Blue */
     color: #fff;
     padding: 0;
-    overflow: visible;
-    /* Allow content to grow beyond min-height */
+    overflow: hidden;
+    /* Prevent slider from overflowing viewport */
     position: relative;
     min-height: 650px;
 }
@@ -198,6 +198,7 @@ body {
     height: 100%;
     min-height: 500px;
     z-index: 1;
+    overflow: hidden;
 }
 
 @media (min-width: 992px) {
@@ -216,19 +217,19 @@ body {
     overflow: hidden;
 }
 
-/* Laptop and larger screens - more aggressive curve */
+/* Laptop and larger screens */
 @media (min-width: 1200px) {
     .hero-slider {
-        left: -100px;
-        clip-path: ellipse(95% 100% at 100% 50%);
+        left: -30px;
+        clip-path: ellipse(92% 100% at 100% 50%);
     }
 }
 
 /* Extra large screens */
 @media (min-width: 1400px) {
     .hero-slider {
-        left: -150px;
-        clip-path: ellipse(100% 100% at 100% 50%);
+        left: -60px;
+        clip-path: ellipse(94% 100% at 100% 50%);
     }
 }
 
@@ -388,12 +389,12 @@ body {
     background-color: #166FE5;
 }
 
-.btn-twitter {
-    background-color: #000000;
+.btn-instagram {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
 }
 
-.btn-twitter:hover {
-    background-color: #333333;
+.btn-instagram:hover {
+    background: linear-gradient(45deg, #d87e2e 0%, #cf5a33 25%, #c71f3a 50%, #b71d5c 75%, #a6147a 100%);
 }
 
 .btn-call {

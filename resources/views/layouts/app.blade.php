@@ -200,8 +200,8 @@
         <a href="https://facebook.com" target="_blank" class="floating-btn btn-facebook" title="Follow us on Facebook">
             <i class="bi bi-facebook"></i>
         </a>
-        <a href="https://twitter.com" target="_blank" class="floating-btn btn-twitter" title="Follow us on X (Twitter)">
-            <i class="bi bi-twitter-x"></i>
+        <a href="https://instagram.com" target="_blank" class="floating-btn btn-instagram" title="Follow us on Instagram">
+            <i class="bi bi-instagram"></i>
         </a>
         <a href="https://wa.me/911234567890" target="_blank" class="floating-btn btn-whatsapp" title="Chat on WhatsApp">
             <i class="bi bi-whatsapp"></i>
