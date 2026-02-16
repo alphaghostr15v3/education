@@ -3,7 +3,7 @@
 @section('content')
 <div class="container py-5">
     <div class="text-center mb-5">
-        <h1 class="display-4 fw-bold">Our Campus Gallery</h1>
+        <h1 class="display-4-responsive fw-bold">Our Campus Gallery</h1>
         <p class="lead text-muted">Recent photos from our campus and events.</p>
     </div>
 

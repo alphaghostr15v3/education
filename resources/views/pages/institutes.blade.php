@@ -3,7 +3,7 @@
 @section('content')
 <div class="bg-light py-5 mb-5 border-bottom">
     <div class="container py-4 text-center">
-        <h1 class="display-4 fw-bold text-dark">Institutes & Programs</h1>
+        <h1 class="display-4-responsive fw-bold text-dark">Institutes & Programs</h1>
         <p class="lead text-muted mx-auto" style="max-width: 700px;">Specialized training institutes and comprehensive academic programs designed for the modern workforce.</p>
     </div>
 </div>
@@ -16,11 +16,11 @@
                  <img src="{{ asset($institute->thumbnail) }}" class="card-img-top" alt="{{ $institute->title }}" style="height: 400px; object-fit: cover;">
                 <div class="card-body p-lg-5 p-4">
                     <h2 class="fw-bold mb-3">{{ $institute->title }}</h2>
-                    <p class="text-muted mb-4 fs-5">{{ $institute->description }}</p>
+                    <p class="text-muted mb-4 fs-5-responsive">{{ $institute->description }}</p>
                     
                     @php $features = $institute->features_list; @endphp
                     @if(count($features) > 0)
-                    <ul class="list-unstyled mb-4 fs-5">
+                    <ul class="list-unstyled mb-4 fs-5-responsive">
                         @foreach($features as $feature)
                         <li class="mb-3 d-flex align-items-center">
                             <i class="bi bi-check-circle-fill text-primary me-3"></i> {{ $feature }}

@@ -4,7 +4,7 @@
 <div class="container py-5">
     <div class="row g-5">
         <div class="col-lg-5">
-            <h1 class="display-4 fw-bold mb-4">Get in Touch</h1>
+            <h1 class="display-4-responsive fw-bold mb-4">Get in Touch</h1>
             <p class="lead text-muted mb-5">Have any questions? We'd love to hear from you. Our team is here to help.</p>
             
             <div class="d-flex mb-4">

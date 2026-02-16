@@ -38,7 +38,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-6 d-none d-lg-block">
+            <div class="col-lg-6">
                 <div class="hero-modern-image-container">
                     <div class="hero-slider">
                         @foreach($slides as $index => $slide)
@@ -57,9 +57,9 @@
         <div class="row align-items-center">
             <div class="col-lg-6 mb-4 mb-lg-0">
                 <span class="text-primary text-uppercase fw-bold letter-spacing-1 mb-2 d-block" style="font-size: 1.2rem;">OUR POSITIONING</span>
-                <h2 class="display-3 fw-bold mb-4">Not just skilling. <br>Industry-led capability building.</h2>
-                <p class="fs-3 text-muted mb-4">India does not suffer from a shortage of trained youth. It suffers from a shortage of industry-ready skills.</p>
-                <p class="text-muted fs-4">YPSVEF was created to bridge this gap by designing and delivering training that is defined by real job roles and modern systems.</p>
+                <h2 class="display-3-responsive mb-4">Not just skilling. <br>Industry-led capability building.</h2>
+                <p class="fs-3-responsive text-muted mb-4">India does not suffer from a shortage of trained youth. It suffers from a shortage of industry-ready skills.</p>
+                <p class="text-muted fs-4-responsive">YPSVEF was created to bridge this gap by designing and delivering training that is defined by real job roles and modern systems.</p>
             </div>
             <div class="col-lg-6">
                 <div class="row g-4">
@@ -101,7 +101,7 @@
 <section class="py-5 bg-white">
     <div class="container py-5">
         <div class="text-center mb-5">
-            <h2 class="display-4 fw-bold">WHAT WE DO</h2>
+            <h2 class="display-4-responsive fw-bold">WHAT WE DO</h2>
             <div class="bg-primary mx-auto my-3" style="width: 50px; height: 3px;"></div>
         </div>
 
@@ -116,9 +116,9 @@
                             </div>
                         </div>
                         <div class="col-sm-9">
-                            <h4 class="fw-bold fs-3">1. Future-Ready Vocational Training</h4>
-                            <p class="text-muted mb-3 fs-5">High-demand skill domains critical to India's growth:</p>
-                            <ul class="list-unstyled fs-5">
+                            <h4 class="fw-bold fs-3-responsive">1. Future-Ready Vocational Training</h4>
+                            <p class="text-muted mb-3 fs-5-responsive">High-demand skill domains critical to India's growth:</p>
+                            <ul class="list-unstyled fs-5-responsive">
                                 <li class="mb-2"><i class="bi bi-dot text-primary me-2"></i>Green construction skills</li>
                                 <li class="mb-2"><i class="bi bi-dot text-primary me-2"></i>Electrical & electronics systems</li>
                                 <li class="mb-2"><i class="bi bi-dot text-primary me-2"></i>Energy, solar, and electrification skills</li>
@@ -139,9 +139,9 @@
                             </div>
                         </div>
                         <div class="col-sm-9">
-                            <h4 class="fw-bold fs-3">2. Quality & Excellence as a System</h4>
-                            <p class="text-muted mb-3 fs-5">Quality is a system, not a slogan:</p>
-                            <ul class="list-unstyled fs-5">
+                            <h4 class="fw-bold fs-3-responsive">2. Quality & Excellence as a System</h4>
+                            <p class="text-muted mb-3 fs-5-responsive">Quality is a system, not a slogan:</p>
+                            <ul class="list-unstyled fs-5-responsive">
                                 <li class="mb-2"><i class="bi bi-dot text-primary me-2"></i>SOP-driven training delivery</li>
                                 <li class="mb-2"><i class="bi bi-dot text-primary me-2"></i>Standardised labs and assessments</li>
                                 <li class="mb-2"><i class="bi bi-dot text-primary me-2"></i>Trainer upskilling and pedagogy</li>
@@ -162,9 +162,9 @@
                             </div>
                         </div>
                         <div class="col-sm-9">
-                            <h4 class="fw-bold fs-3">3. Zero-Waste, Low-Cost Skill Labs</h4>
-                            <p class="text-muted mb-3 fs-5">Pioneers in zero-waste vocational training models:</p>
-                            <ul class="list-unstyled fs-5">
+                            <h4 class="fw-bold fs-3-responsive">3. Zero-Waste, Low-Cost Skill Labs</h4>
+                            <p class="text-muted mb-3 fs-5-responsive">Pioneers in zero-waste vocational training models:</p>
+                            <ul class="list-unstyled fs-5-responsive">
                                 <li class="mb-2"><i class="bi bi-dot text-primary me-2"></i>Reduced material wastage / circular use</li>
                                 <li class="mb-2"><i class="bi bi-dot text-primary me-2"></i>Lower cost per trainee</li>
                                 <li class="mb-2"><i class="bi bi-dot text-primary me-2"></i>Scalable and sustainable labs</li>
@@ -184,9 +184,9 @@
                             </div>
                         </div>
                         <div class="col-sm-9">
-                            <h4 class="fw-bold fs-3">4. Employability & Livelihood Outcomes</h4>
-                            <p class="text-muted mb-3 fs-5">Success measured by livelihoods:</p>
-                            <ul class="list-unstyled fs-5">
+                            <h4 class="fw-bold fs-3-responsive">4. Employability & Livelihood Outcomes</h4>
+                            <p class="text-muted mb-3 fs-5-responsive">Success measured by livelihoods:</p>
+                            <ul class="list-unstyled fs-5-responsive">
                                 <li class="mb-2"><i class="bi bi-dot text-primary me-2"></i>Wage employment & Apprenticeships</li>
                                 <li class="mb-2"><i class="bi bi-dot text-primary me-2"></i>Self-employment / micro-enterprises</li>
                                 <li class="mb-2"><i class="bi bi-dot text-primary me-2"></i>Close industry & ecosystem partnerships</li>
@@ -205,8 +205,8 @@
         <div class="row g-4 justify-content-center">
             <div class="col-lg-5">
                 <span class="text-primary text-uppercase fw-bold letter-spacing-1 mb-2 d-block" style="font-size: 1.2rem;">WHY YPSVEF</span>
-                <h2 class="display-4 fw-bold mb-4">What Sets Us Apart</h2>
-                <p class="text-muted mb-4 fs-4">YPSVEF is built for credibility, scale, and long-term impact in the vocational education ecosystem.</p>
+                <h2 class="display-4-responsive fw-bold mb-4">What Sets Us Apart</h2>
+                <p class="text-muted mb-4 fs-4-responsive">YPSVEF is built for credibility, scale, and long-term impact in the vocational education ecosystem.</p>
                 <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1600&auto=format&fit=crop" class="img-fluid rounded-4 shadow" alt="Differentiation" style="max-width: 100%; height: auto;">
             </div>
             <div class="col-lg-6 offset-lg-1 d-flex flex-column justify-content-center">
@@ -215,8 +215,8 @@
                         <i class="bi bi-check-lg"></i>
                     </div>
                     <div>
-                        <h5 class="fw-bold mb-2 fs-3">Industry-defined skills</h5>
-                        <p class="text-muted mb-0 fs-5">Driven by jobs, not just government schemes.</p>
+                        <h5 class="fw-bold mb-2 fs-3-responsive">Industry-defined skills</h5>
+                        <p class="text-muted mb-0 fs-5-responsive">Driven by jobs, not just government schemes.</p>
                     </div>
                 </div>
                 <div class="d-flex align-items-start gap-3 mb-4">
@@ -224,8 +224,8 @@
                         <i class="bi bi-check-lg"></i>
                     </div>
                     <div>
-                        <h5 class="fw-bold mb-2 fs-3">Modern trades aligned to 2030</h5>
-                        <p class="text-muted mb-0 fs-5">Future-ready certifications for upcoming technologies.</p>
+                        <h5 class="fw-bold mb-2 fs-3-responsive">Modern trades aligned to 2030</h5>
+                        <p class="text-muted mb-0 fs-5-responsive">Future-ready certifications for upcoming technologies.</p>
                     </div>
                 </div>
                 <div class="d-flex align-items-start gap-3 mb-4">
@@ -233,8 +233,8 @@
                         <i class="bi bi-check-lg"></i>
                     </div>
                     <div>
-                        <h5 class="fw-bold mb-2 fs-3">Competition-ready excellence</h5>
-                        <p class="text-muted mb-0 fs-5">Training that meets WorldSkills benchmarks.</p>
+                        <h5 class="fw-bold mb-2 fs-3-responsive">Competition-ready excellence</h5>
+                        <p class="text-muted mb-0 fs-5-responsive">Training that meets WorldSkills benchmarks.</p>
                     </div>
                 </div>
                 <div class="d-flex align-items-start gap-3 mb-4">
@@ -242,8 +242,8 @@
                         <i class="bi bi-check-lg"></i>
                     </div>
                     <div>
-                        <h5 class="fw-bold mb-2 fs-3">Strong governance</h5>
-                        <p class="text-muted mb-0 fs-5">Accountability and transparency as foundation.</p>
+                        <h5 class="fw-bold mb-2 fs-3-responsive">Strong governance</h5>
+                        <p class="text-muted mb-0 fs-5-responsive">Accountability and transparency as foundation.</p>
                     </div>
                 </div>
                 <div class="d-flex align-items-start gap-3">
@@ -251,8 +251,8 @@
                         <i class="bi bi-check-lg"></i>
                     </div>
                     <div>
-                        <h5 class="fw-bold mb-2 fs-3">CSR- and ESG-aligned</h5>
-                        <p class="text-muted mb-0 fs-5">Responsible implementation for long-term value.</p>
+                        <h5 class="fw-bold mb-2 fs-3-responsive">CSR- and ESG-aligned</h5>
+                        <p class="text-muted mb-0 fs-5-responsive">Responsible implementation for long-term value.</p>
                     </div>
                 </div>
             </div>
@@ -268,8 +268,8 @@
             <div class="position-absolute" style="top: -50px; right: -50px; width: 200px; height: 200px; background: rgba(255,255,255,0.05); border-radius: 100px;"></div>
             
             <span class="text-uppercase fw-bold letter-spacing-1 mb-3 d-block opacity-75">PARTNERSHIP INVITATION</span>
-            <h2 class="display-5 fw-bold mb-4">Join us in building India's future workforce</h2>
-            <p class="mx-auto mb-5 opacity-90 fs-5" style="max-width: 800px;">
+            <h2 class="display-5-responsive fw-bold mb-4">Join us in building India's future workforce</h2>
+            <p class="mx-auto mb-5 opacity-90 fs-5-responsive" style="max-width: 800px;">
                 We collaborate with industry leaders, CSR foundations, government institutions, and global partners to ensure skills lead to real work, real value, and real dignity.
             </p>
             

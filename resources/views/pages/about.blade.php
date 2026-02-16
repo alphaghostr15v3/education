@@ -3,7 +3,7 @@
 @section('content')
 <div class="bg-light py-5 mb-5 border-bottom">
     <div class="container py-4 text-center">
-        <h1 class="display-3 fw-bold text-dark">About YPSVEF</h1>
+        <h1 class="display-3-responsive fw-bold text-dark">About YPSVEF</h1>
         <p class="lead text-muted mx-auto" style="max-width: 700px;">Industry-led vocational skills for a green, modern India. We build future-ready capabilities that lead to real employment.</p>
     </div>
 </div>
@@ -15,8 +15,8 @@
         </div>
         <div class="col-lg-6 ps-lg-5">
             <h2 class="fw-bold mb-4">Our Mission</h2>
-            <p class="text-muted mb-4 fs-5">Yadupati Singhania Vocational Education Foundation (YPSVEF) is a not-for-profit institution building future-ready vocational skills that lead to real jobs, sustainable livelihoods, and industry relevance.</p>
-            <p class="text-muted mb-5 fs-5">We work at the intersection of industry needs, youth aspirations, and national priorities—delivering high-quality, low-waste, employability-focused vocational education.</p>
+            <p class="text-muted mb-4 fs-5-responsive">Yadupati Singhania Vocational Education Foundation (YPSVEF) is a not-for-profit institution building future-ready vocational skills that lead to real jobs, sustainable livelihoods, and industry relevance.</p>
+            <p class="text-muted mb-5 fs-5-responsive">We work at the intersection of industry needs, youth aspirations, and national priorities—delivering high-quality, low-waste, employability-focused vocational education.</p>
             <div class="row g-4 text-center">
                 <div class="col-sm-4">
                     <h3 class="fw-bold text-primary mb-0">2024</h3>

@@ -10,6 +10,40 @@ body {
     font-family: 'Nunito', sans-serif;
     color: var(--edu-text-dark);
     background-color: #fff;
+    overflow-x: hidden;
+}
+
+.navbar-logo {
+    height: 60px;
+    width: auto;
+    transition: height 0.3s ease;
+}
+
+@media (min-width: 992px) {
+    .navbar-logo {
+        height: 100px;
+    }
+}
+
+.footer-logo {
+    height: 60px;
+    width: auto;
+}
+
+@media (min-width: 992px) {
+    .footer-logo {
+        height: 80px;
+    }
+}
+
+.main-content {
+    padding: 2rem 0;
+}
+
+@media (max-width: 767.98px) {
+    .main-content {
+        padding: 1rem 0;
+    }
 }
 
 .text-primary {
@@ -143,21 +177,20 @@ body {
 }
 
 .hero-modern-title {
-    font-size: clamp(2rem, 8vw, 4.2rem);
-    /* More aggressive fluid range */
+    font-size: clamp(1.8rem, 6vw, 4.2rem);
     font-weight: 800;
-    line-height: 1.05;
-    margin-bottom: 2rem;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
     word-wrap: break-word;
     letter-spacing: -1px;
 }
 
 .hero-modern-description {
-    font-size: 1.35rem;
+    font-size: clamp(1rem, 2vw, 1.35rem);
     line-height: 1.6;
     max-width: 600px;
     opacity: 0.9;
-    margin-bottom: 3.5rem;
+    margin-bottom: 2.5rem;
 }
 
 .hero-modern-image-container {
@@ -265,6 +298,7 @@ body {
         left: 0;
         clip-path: none;
         position: relative;
+        height: 350px;
     }
 
     .hero-modern .d-flex.flex-wrap {
@@ -346,4 +380,52 @@ body {
 
 .btn-call:hover {
     background-color: #003d7e;
+}
+
+/* Responsive Typography Utilities */
+.display-3-responsive {
+    font-size: clamp(1.8rem, 5vw, 3.5rem);
+    font-weight: 800;
+}
+
+.display-4-responsive {
+    font-size: clamp(1.5rem, 4vw, 2.8rem);
+    font-weight: 800;
+}
+
+.display-5-responsive {
+    font-size: clamp(1.4rem, 3.5vw, 2.4rem);
+    font-weight: 700;
+}
+
+.fs-3-responsive {
+    font-size: clamp(1.1rem, 1.8vw, 1.5rem);
+}
+
+.fs-4-responsive {
+    font-size: clamp(1rem, 1.6vw, 1.25rem);
+}
+
+.fs-5-responsive {
+    font-size: clamp(0.9rem, 1.4vw, 1.1rem);
+}
+
+.hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+@media (max-width: 767.98px) {
+    .hero-modern-content {
+        padding: 60px 20px;
+    }
+
+    .display-3-responsive,
+    .display-4-responsive {
+        line-height: 1.2;
+    }
 }

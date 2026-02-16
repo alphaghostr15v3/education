@@ -22,7 +22,7 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
             <div class="container">
                 <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
-                    <img src="{{ asset('images/ysvef-logo.png') }}" alt="YSVEF Logo" style="height: 100px; width: auto;">
+                    <img src="{{ asset('images/ysvef-logo.png') }}" alt="YSVEF Logo" class="navbar-logo">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -134,7 +134,7 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <main class="main-content">
             @yield('content')
         </main>
 
@@ -143,7 +143,7 @@
                 <div class="row g-4">
                     <div class="col-lg-4">
                         <div class="mb-4">
-                            <img src="{{ asset('images/YPSVEFFOOTER.png') }}" alt="YSVEF Logo" style="height: 80px; width: auto;">
+                            <img src="{{ asset('images/YPSVEFFOOTER.png') }}" alt="YSVEF Logo" class="footer-logo">
                         </div>
                         <p class="text-muted small">Building future-ready vocational skills for a green, modern India. A not-for-profit initiative dedicated to industry-aligned excellence.</p>
                         <div class="d-flex gap-3 mt-4">

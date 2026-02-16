@@ -3,7 +3,7 @@
 @section('content')
 <div class="bg-light py-5 mb-5 border-bottom">
     <div class="container py-4 text-center">
-        <h1 class="display-3 fw-bold">Education Blog</h1>
+        <h1 class="display-3-responsive fw-bold">Education Blog</h1>
         <p class="lead text-muted">Stay informed with the latest trends and student stories.</p>
     </div>
 </div>
