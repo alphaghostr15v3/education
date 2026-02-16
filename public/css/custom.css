@@ -196,8 +196,14 @@ body {
 .hero-modern-image-container {
     position: relative;
     height: 100%;
-    min-height: 650px;
+    min-height: 500px;
     z-index: 1;
+}
+
+@media (min-width: 992px) {
+    .hero-modern-image-container {
+        min-height: 650px;
+    }
 }
 
 .hero-slider {
@@ -205,9 +211,25 @@ body {
     top: 0;
     right: 0;
     bottom: 0;
-    left: -150px;
-    clip-path: ellipse(100% 100% at 100% 50%);
+    left: 0;
+    clip-path: ellipse(90% 100% at 100% 50%);
     overflow: hidden;
+}
+
+/* Laptop and larger screens - more aggressive curve */
+@media (min-width: 1200px) {
+    .hero-slider {
+        left: -100px;
+        clip-path: ellipse(95% 100% at 100% 50%);
+    }
+}
+
+/* Extra large screens */
+@media (min-width: 1400px) {
+    .hero-slider {
+        left: -150px;
+        clip-path: ellipse(100% 100% at 100% 50%);
+    }
 }
 
 .hero-slide {
