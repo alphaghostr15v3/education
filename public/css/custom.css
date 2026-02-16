@@ -57,8 +57,9 @@ body {
 }
 
 .navbar-nav .nav-link {
-    padding: 0.5rem 0.75rem;
+    padding: 0.5rem 0.5rem;
     transition: color 0.3s ease;
+    font-size: 0.95rem;
 }
 
 .navbar-nav .nav-item {
@@ -67,11 +68,23 @@ body {
 
 @media (min-width: 992px) {
     .navbar-nav {
-        gap: 0.5rem !important;
+        gap: 0.1rem !important;
     }
 
     .navbar-nav .nav-link {
-        padding: 0.5rem 1rem;
+        padding: 0.5rem 0.65rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .navbar-nav {
+        gap: 0.3rem !important;
+    }
+
+    .navbar-nav .nav-link {
+        padding: 0.5rem 0.8rem;
+        font-size: 0.95rem;
     }
 }
 
